@@ -23,7 +23,7 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Details Tab */}
+          {/* DetailsTab */}
           <DetailsTab />
         </div>
 
