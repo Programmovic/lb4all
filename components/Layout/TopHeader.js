@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import LanguageDropdown from "./LanguageDropdown";
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const TopHeader = () => {
   // Wishlist Modal
@@ -10,7 +11,12 @@ const TopHeader = () => {
   const handleToggleWishlistModal = () => {
     setActiveWishlistModal(!isActiveWishlistModal);
   };
+  const [darkMode, setDarkMode] = useState(false);
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark', darkMode);
+  };
   return (
     <>
       <div className="top-header">
@@ -47,6 +53,13 @@ const TopHeader = () => {
                 </li>
                 <li>
                   <LanguageDropdown />
+                </li>
+                <li>
+                <div className={`app-container ${darkMode ? 'dark' : ''}`}>
+        <button onClick={toggleDarkMode}>
+          {darkMode ? <FaMoon /> : <FaSun />}
+        </button>
+      </div>
                 </li>
               </ul>
             </div>

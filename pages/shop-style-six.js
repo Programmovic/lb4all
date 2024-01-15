@@ -10,6 +10,7 @@ import News from "@/components/Common/News";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import Brands from "@/components/ShopStyleSix/Brands";
 
 const Index = () => {
   return (
@@ -23,6 +24,8 @@ const Index = () => {
       <CategoryProducts />
 
       <TrendingProducts />
+
+      <Brands />
 
       <BestSeller />
 

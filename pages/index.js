@@ -11,6 +11,7 @@ import NewsTwo from '@/components/Common/NewsTwo';
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import Brands from "@/components/ShopStyleSix/Brands";
 
 const ShopStyleSix = () => {
   return (
@@ -24,7 +25,7 @@ const ShopStyleSix = () => {
       <ProductsCategoryStyleTwo />
 
       <TrendingProducts />
-
+      <Brands />
       <BestSeller />
 
       <Facility />

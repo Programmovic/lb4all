@@ -10,7 +10,7 @@ const NewsTwo = () => {
         <div className="container">
           <div className="section-title">
             <h2>
-              <span className="dot"></span> Novine News
+              <span className="dot"></span> LB4ALL News
             </h2>
           </div>
 

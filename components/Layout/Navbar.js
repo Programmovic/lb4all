@@ -24,8 +24,8 @@ const Navbar = () => {
   });
 
   const classOne = menu
-    ? "collapse navbar-collapse mean-menu"
-    : "collapse navbar-collapse show";
+    ? "navbar-collapse mean-menu"
+    : "navbar-collapse show";
   const classTwo = menu
     ? "navbar-toggler navbar-toggler-right collapsed"
     : "navbar-toggler navbar-toggler-right";
@@ -73,7 +73,7 @@ const Navbar = () => {
 
               <div className={classOne} id="navbarSupportedContent">
                 <ul className="navbar-nav">
-                  <li className="nav-item p-relative">
+                  <li className="nav-item relative">
                     <Link
                       href="#"
                       className="nav-link active"
@@ -1936,7 +1936,7 @@ const Navbar = () => {
                       handleToggleCartModal();
                     }}
                   >
-                    Cart(3) <i className="fas fa-shopping-bag"></i>
+                    <i className="fas fa-shopping-bag mr-1"></i> Cart(3) 
                   </Link>
                 </div>
               </div>

@@ -34,11 +34,11 @@ const BannerSlider = () => {
                     <h1>Protect your eyes!</h1>
                     <p>Take 20% Off ‘Sale Must-Haves'</p>
 
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary rounded-3">
                       Shop Women's
                     </Link>
 
-                    <Link href="#" className="btn btn-light">
+                    <Link href="#" className="btn btn-light rounded-3">
                       Shop Men's
                     </Link>
                   </div>
@@ -63,11 +63,11 @@ const BannerSlider = () => {
                     <h1>Winter Sun Glasses</h1>
                     <p>Trending from men and women style collection</p>
 
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary rounded-3">
                       Shop Women's
                     </Link>
 
-                    <Link href="#" className="btn btn-light">
+                    <Link href="#" className="btn btn-light rounded-3">
                       Shop Men's
                     </Link>
                   </div>
@@ -92,11 +92,11 @@ const BannerSlider = () => {
                     <h1>Travel Sun Glasses</h1>
                     <p>Up To 30% OFF Select Styles</p>
 
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary rounded-3">
                       Shop Women's
                     </Link>
 
-                    <Link href="#" className="btn btn-light">
+                    <Link href="#" className="btn btn-light rounded-3">
                       Shop Men's
                     </Link>
                   </div>

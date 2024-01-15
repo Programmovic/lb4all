@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/bundle";
 
 // Globals CSS
-import "../styles/style.css";
+import "../styles/style.scss";
 // Responsive CSS
 import "../styles/responsive.css";
 // RTL CSS
