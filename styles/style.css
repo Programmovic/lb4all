@@ -6825,7 +6825,9 @@ Top Header Area CSS
 .top-header-discount-info p a:hover::before {
   width: 0;
 }
-
+.lb_logo{
+  width: 150px;
+}
 /*================================================
 Navbar Area CSS
 =================================================*/

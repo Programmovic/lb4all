@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="container position-relative">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link href="/" className="navbar-brand">
-                <img src="/images/logo.png" alt="logo" />
+                <img src="/images/LB4ALL LOGO-04 (1).png" alt="logo" className="lb_logo"/>
               </Link>
 
               <button

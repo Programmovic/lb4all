@@ -1,26 +1,27 @@
-import Banner from "@/components/ShopStyleOne/Banner";
-import OfferArea from "@/components/ShopStyleOne/OfferArea";
-import Products from '@/components/ShopStyleOne/Products';
-import CategoryProducts from "@/components/ShopStyleOne/CategoryProducts";
-import TrendingProducts from '@/components/ShopStyleOne/TrendingProducts';
-import BestSeller from '@/components/ShopStyleOne/BestSellers';
-import Facility from "@/components/ShopStyleOne/Facility";
-import Testimonials from "@/components/Common/Testimonials";
-import News from "@/components/Common/News";
+import React from "react";
+import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
+import ProductCategories from "@/components/ShopStyleSix/ProductCategories";
+import AllProducts from "@/components/ShopStyleSix/AllProducts";
+import ProductsCategoryStyleTwo from "@/components/ShopStyleSix/ProductsCategoryStyleTwo";
+import TrendingProducts from "@/components/ShopStyleSix/TrendingProducts";
+import BestSeller from '@/components/ShopStyleSix/BestSeller';
+import Facility from "@/components/Common/Facility";
+import TestimonialsTwo from '@/components/Common/TestimonialsTwo';
+import NewsTwo from '@/components/Common/NewsTwo';
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
 
-const Index = () => {
+const ShopStyleSix = () => {
   return (
     <>
-      <Banner />
+      <BannerSlider />
 
-      <OfferArea />
+      <ProductCategories />
 
-      <Products />
+      <AllProducts />
 
-      <CategoryProducts />
+      <ProductsCategoryStyleTwo />
 
       <TrendingProducts />
 
@@ -28,9 +29,9 @@ const Index = () => {
 
       <Facility />
 
-      <Testimonials />
+      <TestimonialsTwo />
 
-      <News />
+      <NewsTwo />
 
       <Subscribe />
 
@@ -41,4 +42,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ShopStyleSix;
