@@ -17,10 +17,12 @@ import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import GoTop from "@/components/Layout/GoTop";
 import SEO from "@/components/Common/Seo";
+import { ThemeProvider } from "next-themes";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
       <SEO />
       <Navbar />
 
@@ -29,6 +31,7 @@ export default function App({ Component, pageProps }) {
       <Footer />
 
       <GoTop />
+      </ThemeProvider>
     </>
   )
 }

@@ -60,6 +60,7 @@ This files table contents are outlined below>>>>>
 ** - Customer Service Area CSS
 ** - Footer Area CSS
 ** - Go Top CSS
+** - Profile
 */
 /*================================================
 Default CSS
@@ -71,7 +72,8 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  @apply dark:bg-black
+  font-weight: bold;
+  @apply dark:bg-black dark:text-white
 }
 
 p {
@@ -79,6 +81,7 @@ p {
   line-height: 1.8;
   font-size: 14px;
   margin-bottom: 15px;
+  @apply dark:text-white
 }
 p:last-child {
   margin-bottom: 0;
@@ -344,10 +347,9 @@ Top Panel Area CSS
 /*================================================
 Top Header Area CSS
 =================================================*/
+
 .top-header {
   background-color: #f1f1f1;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .top-header .container-fluid {
   padding-left: 35px;
@@ -473,11 +475,12 @@ Navbar Area CSS
   width: 100%;
   z-index: 999;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
-  background-color: #ffffff !important;
+  
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
 }
 
 .navbar-brand {
+  
   position: relative;
   top: -1px;
   padding-top: 0;
@@ -485,10 +488,10 @@ Navbar Area CSS
 }
 
 .novine-nav {
-  background-color: #ffffff;
   position: relative;
   padding-top: 3px;
   padding-bottom: 3px;
+  background-color: #ffffff !important;
 }
 .novine-nav .navbar {
   position: inherit;
@@ -7840,7 +7843,6 @@ Pagination CSS
   left: 0;
   top: 18px;
   background: #fff;
-  width: 50px;
   text-align: left;
   z-index: 5;
   border: 1px solid #eee;
@@ -7859,4 +7861,44 @@ Pagination CSS
 }
 .lang-dropdown .dropdown-list li a {
   font-size: 13px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+// =================================================
+// Profile
+// =================================================
+
+.profile-button {
+  background: rgb(99, 39, 120);
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #682773
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
+
+.add-experience:hover {
+  background: #BA68C8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #BA68C8
+}

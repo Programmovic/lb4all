@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="container position-relative">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link href="/" className="navbar-brand">
-                <img src="/images/LB4ALL LOGO-04 (1).png" alt="logo" className="lb_logo"/>
+                <img src="/images/LB4ALL LOGO-04 (1).png" alt="logo" className="lb_logo" />
               </Link>
 
               <button
@@ -86,9 +86,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/"
-                          className={`nav-link ${
-                            currentRoute === "/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/" ? "active" : "non-active"
+                            }`}
                         >
                           Home One
                         </Link>
@@ -97,11 +96,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-two/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-two/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-two/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Two
                         </Link>
@@ -110,11 +108,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-three/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-three/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-three/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Three
                         </Link>
@@ -123,11 +120,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-four/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-four/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-four/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Four
                         </Link>
@@ -136,11 +132,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-five/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-five/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-five/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Five
                         </Link>
@@ -149,11 +144,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-six/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-six/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-six/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Six
                         </Link>
@@ -162,11 +156,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-seven/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-seven/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-seven/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Seven
                         </Link>
@@ -175,11 +168,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-eight/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-eight/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-eight/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Eight
                         </Link>
@@ -188,11 +180,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-nine/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-nine/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-nine/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Nine
                         </Link>
@@ -201,11 +192,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-ten/"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-ten/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-ten/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Ten
                         </Link>
@@ -214,11 +204,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/shop-style-eleven"
-                          className={`nav-link ${
-                            currentRoute === "/shop-style-eleven/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/shop-style-eleven/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Home Eleven
                         </Link>
@@ -227,11 +216,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/covid-19/"
-                          className={`nav-link ${
-                            currentRoute === "/covid-19/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/covid-19/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Covid-19
                         </Link>
@@ -240,11 +228,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/grocery/"
-                          className={`nav-link ${
-                            currentRoute === "/grocery/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/grocery/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Grocery
                         </Link>
@@ -253,11 +240,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/electronics/"
-                          className={`nav-link ${
-                            currentRoute === "/electronics/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/electronics/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Electronics
                         </Link>
@@ -266,11 +252,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/furniture/"
-                          className={`nav-link ${
-                            currentRoute === "/furniture/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/furniture/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Furniture
                         </Link>
@@ -300,11 +285,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/collections-style-one/"
-                                    className={`nav-link ${
-                                      currentRoute === "/collections-style-one/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/collections-style-one/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Collections Type 1
                                   </Link>
@@ -313,11 +297,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/collections-style-two/"
-                                    className={`nav-link ${
-                                      currentRoute === "/collections-style-two/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/collections-style-two/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Collections Type 2
                                   </Link>
@@ -326,11 +309,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Products
                                   </Link>
@@ -339,11 +321,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/three-grid/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Products Three Grid
                                   </Link>
@@ -352,11 +333,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/four-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/four-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/four-grid/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Products Four Grid
                                   </Link>
@@ -365,25 +345,23 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/list-view/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/list-view/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/list-view/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Products List View
                                   </Link>
                                 </li>
-                           
+
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     With Sidebar Full Width
                                   </Link>
@@ -398,11 +376,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/cart/"
-                                    className={`nav-link ${
-                                      currentRoute === "/cart/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/cart/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Cart
                                   </Link>
@@ -411,11 +388,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/checkout/"
-                                    className={`nav-link ${
-                                      currentRoute === "/checkout/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/checkout/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Checkout
                                   </Link>
@@ -424,11 +400,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/compare/"
-                                    className={`nav-link ${
-                                      currentRoute === "/compare/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/compare/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Compare
                                   </Link>
@@ -437,11 +412,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/login/"
-                                    className={`nav-link ${
-                                      currentRoute === "/login/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/login/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Login
                                   </Link>
@@ -450,11 +424,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/signup/"
-                                    className={`nav-link ${
-                                      currentRoute === "/signup/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/signup/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Signup
                                   </Link>
@@ -463,11 +436,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/customer-service/"
-                                    className={`nav-link ${
-                                      currentRoute === "/customer-service/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/customer-service/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Customer Service
                                   </Link>
@@ -548,7 +520,7 @@ const Navbar = () => {
                     >
                       Women's <i className="fas fa-chevron-down"></i>
                     </Link>
-                    
+
                     <ul className="dropdown-menu">
                       <li className="nav-item">
                         <div className="container">
@@ -560,12 +532,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Coats
                                   </Link>
@@ -574,12 +545,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jackets
                                   </Link>
@@ -588,11 +558,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Blazers
                                   </Link>
@@ -601,12 +570,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Dresses
                                   </Link>
@@ -615,12 +583,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Trousers
                                   </Link>
@@ -629,12 +596,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jeans
                                   </Link>
@@ -643,12 +609,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Sweatshirts
                                   </Link>
@@ -657,12 +622,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     T-Shirts
                                   </Link>
@@ -677,12 +641,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Trainers
                                   </Link>
@@ -691,11 +654,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Boots
                                   </Link>
@@ -704,12 +666,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heels
                                   </Link>
@@ -718,12 +679,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Flats
                                   </Link>
@@ -732,12 +692,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heeled Sandals
                                   </Link>
@@ -758,11 +717,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Bags
                                   </Link>
@@ -771,12 +729,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Glasses
                                   </Link>
@@ -785,12 +742,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jewellery
                                   </Link>
@@ -805,12 +761,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Gadgets
                                   </Link>
@@ -819,12 +774,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Hats & Beanie
                                   </Link>
@@ -833,12 +787,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Purses
                                   </Link>
@@ -903,11 +856,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Coats
                                   </Link>
@@ -916,12 +868,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jackets
                                   </Link>
@@ -930,12 +881,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jeans
                                   </Link>
@@ -944,12 +894,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     T-Shirts
                                   </Link>
@@ -958,12 +907,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Sweatshirts
                                   </Link>
@@ -972,12 +920,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Knitwear
                                   </Link>
@@ -986,12 +933,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Shirts
                                   </Link>
@@ -1006,12 +952,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Trainers
                                   </Link>
@@ -1020,12 +965,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Boots
                                   </Link>
@@ -1034,11 +978,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heels
                                   </Link>
@@ -1047,12 +990,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Flats
                                   </Link>
@@ -1061,12 +1003,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heeled Sandals
                                   </Link>
@@ -1075,12 +1016,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Sandals
                                   </Link>
@@ -1089,12 +1029,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Platforms
                                   </Link>
@@ -1103,12 +1042,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heeled Sandals
                                   </Link>
@@ -1123,12 +1061,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Bags
                                   </Link>
@@ -1137,11 +1074,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Backpacks
                                   </Link>
@@ -1150,12 +1086,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Glasses
                                   </Link>
@@ -1164,11 +1099,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Earrings
                                   </Link>
@@ -1177,12 +1111,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     iPhone Cases
                                   </Link>
@@ -1191,12 +1124,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Mobile Accessories
                                   </Link>
@@ -1205,12 +1137,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Socks
                                   </Link>
@@ -1273,11 +1204,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Coats
                                   </Link>
@@ -1286,12 +1216,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jackets
                                   </Link>
@@ -1300,12 +1229,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Jeans
                                   </Link>
@@ -1314,12 +1242,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     T-Shirts
                                   </Link>
@@ -1328,12 +1255,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Sweatshirts
                                   </Link>
@@ -1342,12 +1268,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Knitwear
                                   </Link>
@@ -1356,12 +1281,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Shirts
                                   </Link>
@@ -1376,12 +1300,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Trainers
                                   </Link>
@@ -1390,12 +1313,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Boots
                                   </Link>
@@ -1404,11 +1326,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heels
                                   </Link>
@@ -1417,12 +1338,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Flats
                                   </Link>
@@ -1431,12 +1351,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heeled Sandals
                                   </Link>
@@ -1445,12 +1364,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Sandals
                                   </Link>
@@ -1459,12 +1377,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Platforms
                                   </Link>
@@ -1473,12 +1390,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Heeled Sandals
                                   </Link>
@@ -1493,12 +1409,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Bags
                                   </Link>
@@ -1507,11 +1422,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Backpacks
                                   </Link>
@@ -1520,12 +1434,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Glasses
                                   </Link>
@@ -1534,11 +1447,10 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                    className={`nav-link ${currentRoute === "/products/"
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Earrings
                                   </Link>
@@ -1547,12 +1459,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     iPhone Cases
                                   </Link>
@@ -1561,12 +1472,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Mobile Accessories
                                   </Link>
@@ -1575,12 +1485,11 @@ const Navbar = () => {
                                 <li>
                                   <Link
                                     href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute ===
+                                    className={`nav-link ${currentRoute ===
                                       "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
+                                      ? "active"
+                                      : "non-active"
+                                      }`}
                                   >
                                     Socks
                                   </Link>
@@ -1637,9 +1546,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/about/"
-                          className={`nav-link ${
-                            currentRoute === "/about/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/about/" ? "active" : "non-active"
+                            }`}
                         >
                           About Us
                         </Link>
@@ -1648,11 +1556,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/sizing-guide/"
-                          className={`nav-link ${
-                            currentRoute === "/sizing-guide/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/sizing-guide/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Sizing Guide
                         </Link>
@@ -1661,11 +1568,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/gallery/"
-                          className={`nav-link ${
-                            currentRoute === "/gallery/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/gallery/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Gallery
                         </Link>
@@ -1683,12 +1589,22 @@ const Navbar = () => {
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link
+                              href="/profile/"
+                              className={`nav-link ${currentRoute === "/profile/"
+                                ? "active"
+                                : "non-active"
+                                }`}
+                            >
+                              Profile
+                            </Link>
+                          </li>
+                          <li className="nav-item">
+                            <Link
                               href="/login/"
-                              className={`nav-link ${
-                                currentRoute === "/login/"
-                                  ? "active"
-                                  : "non-active"
-                              }`}
+                              className={`nav-link ${currentRoute === "/login/"
+                                ? "active"
+                                : "non-active"
+                                }`}
                             >
                               Login
                             </Link>
@@ -1697,11 +1613,10 @@ const Navbar = () => {
                           <li className="nav-item">
                             <Link
                               href="/signup/"
-                              className={`nav-link ${
-                                currentRoute === "/signup/"
-                                  ? "active"
-                                  : "non-active"
-                              }`}
+                              className={`nav-link ${currentRoute === "/signup/"
+                                ? "active"
+                                : "non-active"
+                                }`}
                             >
                               Signup
                             </Link>
@@ -1710,11 +1625,10 @@ const Navbar = () => {
                           <li className="nav-item">
                             <Link
                               href="/cart/"
-                              className={`nav-link ${
-                                currentRoute === "/cart/"
-                                  ? "active"
-                                  : "non-active"
-                              }`}
+                              className={`nav-link ${currentRoute === "/cart/"
+                                ? "active"
+                                : "non-active"
+                                }`}
                             >
                               Cart
                             </Link>
@@ -1725,9 +1639,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/cart"
-                          className={`nav-link ${
-                            currentRoute === "/cart/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/cart/" ? "active" : "non-active"
+                            }`}
                         >
                           Cart
                         </Link>
@@ -1736,11 +1649,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/checkout/"
-                          className={`nav-link ${
-                            currentRoute === "/checkout/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/checkout/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Checkout
                         </Link>
@@ -1749,11 +1661,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/compare/"
-                          className={`nav-link ${
-                            currentRoute === "/compare/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/compare/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Compare
                         </Link>
@@ -1762,11 +1673,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/customer-service/"
-                          className={`nav-link ${
-                            currentRoute === "/customer-service/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/customer-service/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Customer Service
                         </Link>
@@ -1775,9 +1685,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/login/"
-                          className={`nav-link ${
-                            currentRoute === "/login/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/login/" ? "active" : "non-active"
+                            }`}
                         >
                           Login
                         </Link>
@@ -1786,11 +1695,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/signup/"
-                          className={`nav-link ${
-                            currentRoute === "/signup/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/signup/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Signup
                         </Link>
@@ -1799,9 +1707,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/faq/"
-                          className={`nav-link ${
-                            currentRoute === "/faq/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/faq/" ? "active" : "non-active"
+                            }`}
                         >
                           FAQs
                         </Link>
@@ -1810,9 +1717,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/404/"
-                          className={`nav-link ${
-                            currentRoute === "/404/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/404/" ? "active" : "non-active"
+                            }`}
                         >
                           Error 404
                         </Link>
@@ -1821,11 +1727,10 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/contact-us/"
-                          className={`nav-link ${
-                            currentRoute === "/contact-us/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/contact-us/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Contact Us
                         </Link>
@@ -1846,9 +1751,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/blog/"
-                          className={`nav-link ${
-                            currentRoute === "/blog/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/blog/" ? "active" : "non-active"
+                            }`}
                         >
                           Blog Grid (3 in Row)
                         </Link>
@@ -1857,9 +1761,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/blog2/"
-                          className={`nav-link ${
-                            currentRoute === "/blog2/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/blog2/" ? "active" : "non-active"
+                            }`}
                         >
                           Blog Grid (2 in Row)
                         </Link>
@@ -1868,9 +1771,8 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/blog3/"
-                          className={`nav-link ${
-                            currentRoute === "/blog3/" ? "active" : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/blog3/" ? "active" : "non-active"
+                            }`}
                         >
                           Blog Grid (1 in Row)
                         </Link>
@@ -1879,40 +1781,37 @@ const Navbar = () => {
                       <li className="nav-item">
                         <Link
                           href="/blog-details/"
-                          className={`nav-link ${
-                            currentRoute === "/blog-details/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/blog-details/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Blog Details
                         </Link>
 
                         <Link
                           href="/blog-details-two/"
-                          className={`nav-link ${
-                            currentRoute === "/blog-details-two/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/blog-details-two/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Blog Details Two
                         </Link>
 
                         <Link
                           href="/blog-details-three/"
-                          className={`nav-link ${
-                            currentRoute === "/blog-details-three/"
-                              ? "active"
-                              : "non-active"
-                          }`}
+                          className={`nav-link ${currentRoute === "/blog-details-three/"
+                            ? "active"
+                            : "non-active"
+                            }`}
                         >
                           Blog Details Three
                         </Link>
                       </li>
                     </ul>
                   </li>
-                </ul> 
+                </ul>
               </div>
 
               <div className="others-option">
@@ -1936,7 +1835,7 @@ const Navbar = () => {
                       handleToggleCartModal();
                     }}
                   >
-                    <i className="fas fa-shopping-bag mr-1"></i> Cart(3) 
+                    <i className="fas fa-shopping-bag mr-1"></i> Cart(3)
                   </Link>
                 </div>
               </div>
@@ -1947,9 +1846,8 @@ const Navbar = () => {
 
       {/* Search Form Modal */}
       <div
-        className={`search-overlay ${
-          isActiveSearchModal ? "" : "search-overlay-active"
-        }`}
+        className={`search-overlay ${isActiveSearchModal ? "" : "search-overlay-active"
+          }`}
       >
         <div className="d-table">
           <div className="d-table-cell">
@@ -1984,9 +1882,8 @@ const Navbar = () => {
 
       {/* Cart Modal */}
       <div
-        className={`modal shoppingCartModal fade ${
-          isActiveCartModal ? "" : "show"
-        }`}
+        className={`modal shoppingCartModal fade ${isActiveCartModal ? "" : "show"
+          }`}
         style={{}}
       >
         <div className="modal-dialog" role="document">

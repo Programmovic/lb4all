@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import LanguageDropdown from "./LanguageDropdown";
 import { FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from "next-themes";
 
 const TopHeader = () => {
   // Wishlist Modal
@@ -11,15 +12,21 @@ const TopHeader = () => {
   const handleToggleWishlistModal = () => {
     setActiveWishlistModal(!isActiveWishlistModal);
   };
-  const [darkMode, setDarkMode] = useState(false);
+ 
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark', darkMode);
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
   return (
     <>
-      <div className="top-header">
+      <div className="dark:bg-dark py-6 top-header">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-7 col-md-6">
@@ -51,27 +58,31 @@ const TopHeader = () => {
                     Compare <i className="fas fa-balance-scale"></i>
                   </Link>
                 </li>
-                <li>
-                  <LanguageDropdown />
-                </li>
-                <li>
-                <div className={`app-container ${darkMode ? 'dark' : ''}`}>
-        <button onClick={toggleDarkMode}>
-          {darkMode ? <FaMoon /> : <FaSun />}
-        </button>
-      </div>
+                <li className="lang-dropdown">
+                  <div onClick={toggleDropdown} className="dropdown-header">Options</div>
+                  {isDropdownOpen && (
+                    <ul className="dropdown-list p-10">
+                      <li className="py-1">
+                        <LanguageDropdown />
+                      </li>
+                      <li className="py-1">
+                        <button onClick={toggleTheme}>
+                          {theme === "light" ? <FaMoon /> : <FaSun />}
+                        </button>
+                      </li>
+                    </ul>
+                  )}
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
- 
+
       {/* Wishlist Modal */}
       <div
-        className={`modal shoppingWishlistModal fade ${
-          isActiveWishlistModal ? "" : "show"
-        }`}
+        className={`modal shoppingWishlistModal fade ${isActiveWishlistModal ? "" : "show"
+          }`}
         style={{}}
       >
         <div className="modal-dialog" role="document">
@@ -151,7 +162,7 @@ const TopHeader = () => {
                 </Link>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
 
         <span className="close-modal" onClick={handleToggleWishlistModal}>clone</span>
