@@ -5,6 +5,7 @@ import TopPanel from "./TopPanel";
 import TopHeader from "./TopHeader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const currentRoute = usePathname();
@@ -41,7 +42,7 @@ const Navbar = () => {
   const handleToggleCartModal = () => {
     setActiveCartModal(!isActiveCartModal);
   };
-
+  const { theme, setTheme } = useTheme();
   return (
     <>
       <TopPanel />
@@ -53,7 +54,7 @@ const Navbar = () => {
           <div className="container position-relative">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link href="/" className="navbar-brand">
-                <img src="/images/LB4ALL LOGO-04 (1).png" alt="logo" className="lb_logo" />
+                <img src={theme === 'light' ? `/images/LB4ALL LOGO-04 (1).png` : `/images/white-logo.png`} alt="logo" className="lb_logo" />
               </Link>
 
               <button

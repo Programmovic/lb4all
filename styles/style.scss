@@ -73,7 +73,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: bold;
-  @apply dark:bg-black dark:text-white
+  @apply dark:bg-[#18191a] dark:text-white
 }
 
 p {
@@ -139,6 +139,7 @@ img {
   text-align: center;
   background-color: #fcfbfb;
   padding: 15px;
+  @apply dark:bg-[#3a3b3c];
 }
 .section-title h2 {
   margin-bottom: 0;
@@ -155,6 +156,7 @@ img {
   width: 12px;
   height: 12px;
   border: 1px solid #222222;
+  @apply dark:border-white;
 }
 .section-title h2 .dot::before {
   position: absolute;
@@ -165,6 +167,7 @@ img {
   bottom: 0;
   background: #222222;
   margin: 1px;
+  @apply dark:bg-white;
 }
 .section-title.without-bg {
   padding: 0;
@@ -218,6 +221,7 @@ img {
   background-color: transparent;
   color: #222222;
   border-color: #222222;
+  @apply dark:text-white dark:border-white 
 }
 .btn-light.disabled, .btn-light:disabled {
   background-color: transparent;
@@ -252,6 +256,7 @@ img {
   border: none;
   border-radius: 0;
   transition: 0.5s;
+  @apply dark:bg-[#242526]
 }
 .form-control:focus {
   outline: 0;
@@ -276,6 +281,7 @@ Top Panel Area CSS
   height: auto;
   padding-top: 13px;
   padding-bottom: 13px;
+  @apply dark:bg-[#8899a6]
 }
 .top-panel .panel-content {
   transition: 0.5s;
@@ -350,6 +356,7 @@ Top Header Area CSS
 
 .top-header {
   background-color: #f1f1f1;
+  @apply dark:bg-[#3a3b3c]
 }
 .top-header .container-fluid {
   padding-left: 35px;
@@ -372,6 +379,7 @@ Top Header Area CSS
   font-size: 15px;
   line-height: initial;
   position: relative;
+  @apply dark:text-white;
 }
 .top-header-nav li a::before {
   content: "";
@@ -382,9 +390,11 @@ Top Header Area CSS
   height: 1px;
   background: #222222;
   transition: 0.5s;
+  @apply dark:bg-white;
 }
 .top-header-nav li a:hover, .top-header-nav li a:focus {
   color: #222222;
+  @apply dark:text-white;
 }
 .top-header-nav li a:hover::before, .top-header-nav li a:focus::before {
   width: 100%;
@@ -419,6 +429,7 @@ Top Header Area CSS
 }
 .top-header-right-nav li a {
   color: #222222;
+  @apply dark:text-white;
   font-size: 15px;
   line-height: initial;
   position: relative;
@@ -434,10 +445,12 @@ Top Header Area CSS
   width: 0;
   height: 1px;
   background: #222222;
+  @apply dark:bg-white;
   transition: 0.5s;
 }
 .top-header-right-nav li a:hover, .top-header-right-nav li a:focus {
   color: #222222;
+  @apply dark:text-white;
 }
 .top-header-right-nav li a:hover::before, .top-header-right-nav li a:focus::before {
   width: 100%;
@@ -491,7 +504,8 @@ Navbar Area CSS
   position: relative;
   padding-top: 3px;
   padding-bottom: 3px;
-  background-color: #ffffff !important;
+  background-color: #ffffff;
+  @apply dark:bg-[#242526]
 }
 .novine-nav .navbar {
   position: inherit;
@@ -532,15 +546,18 @@ Navbar Area CSS
   margin-left: 10px;
   margin-right: 10px;
   font-weight: bold;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item a:hover, .novine-nav .navbar .navbar-nav .nav-item a:focus, .novine-nav .navbar .navbar-nav .nav-item a.active {
   color: #222222;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item a i {
   font-size: 11px;
 }
 .novine-nav .navbar .navbar-nav .nav-item:hover a, .novine-nav .navbar .navbar-nav .nav-item:focus a, .novine-nav .navbar .navbar-nav .nav-item.active a {
   color: #222222;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu {
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
@@ -560,6 +577,7 @@ Navbar Area CSS
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 20px;
+  @apply dark:bg-[#242526]
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li {
   position: relative;
@@ -574,6 +592,7 @@ Navbar Area CSS
   font-size: 14px;
   position: relative;
   font-weight: bold;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover, .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus, .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active {
   color: #222222;
@@ -600,6 +619,7 @@ Navbar Area CSS
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active {
   color: #222222;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li {
   position: relative;
@@ -626,12 +646,15 @@ Navbar Area CSS
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
   color: #222222;
   text-transform: capitalize;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
   color: #222222;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li.active a {
   color: #222222;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li:hover .dropdown-menu {
   opacity: 1;
@@ -640,6 +663,7 @@ Navbar Area CSS
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li.active a {
   color: #222222;
+  @apply dark:text-white;
 }
 .novine-nav .navbar .navbar-nav .nav-item .dropdown-menu li:hover .dropdown-menu {
   opacity: 1;
@@ -665,6 +689,7 @@ Navbar Area CSS
 }
 .novine-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .submenu-title {
   color: #222222;
+  @apply dark:text-white;
   font-size: 15px;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -723,6 +748,7 @@ Navbar Area CSS
   padding: 20px;
   margin-left: 10px;
   margin-right: 10px;
+  @apply dark:bg-[#242526]
 }
 .novine-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu .aside-trending-products .category h4 {
   font-size: 15px;
@@ -730,6 +756,7 @@ Navbar Area CSS
   margin-bottom: 0;
   position: relative;
   z-index: 1;
+  @apply dark:text-white
 }
 .novine-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu .aside-trending-products img {
   transition: 0.5s;
@@ -765,6 +792,7 @@ Navbar Area CSS
 }
 .novine-nav .others-option .option-item a {
   color: #222222;
+  @apply dark:text-white;
   text-transform: uppercase;
   position: relative;
 }
@@ -780,6 +808,7 @@ Navbar Area CSS
 }
 .novine-nav .others-option .option-item a:hover, .novine-nav .others-option .option-item a:focus {
   color: #222222;
+  @apply dark:text-white;
 }
 .novine-nav .others-option .option-item a:hover::before, .novine-nav .others-option .option-item a:focus::before {
   width: 100%;
@@ -1440,6 +1469,7 @@ Main Banner Area CSS
   text-transform: uppercase;
   margin-top: 8px;
   margin-bottom: 15px;
+  @apply text-[#222222];
 }
 .main-banner-content p {
   line-height: initial;
@@ -1603,6 +1633,7 @@ Offer Area CSS
   padding: 20px;
   margin-left: 40px;
   margin-right: 40px;
+  @apply dark:border-[#242526]
 }
 .offer-box .category::before {
   content: "";
@@ -1615,6 +1646,7 @@ Offer Area CSS
   opacity: 0.94;
   z-index: 1;
   margin: 6px;
+  @apply dark:bg-[#242526]
 }
 .offer-box .category h4 {
   font-size: 16px;
@@ -1639,6 +1671,7 @@ Offer Area CSS
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
+  @apply dark:border-[#242526]
 }
 .offer-box .box-inner::before {
   content: "";
@@ -1652,6 +1685,7 @@ Offer Area CSS
   z-index: 1;
   margin: 6px;
   z-index: -1;
+  @apply dark:bg-[#242526]
 }
 .offer-box .box-inner h3 {
   font-size: 17px;
@@ -1674,6 +1708,7 @@ Offer Area CSS
   color: #666666;
   position: relative;
   display: inline-block;
+  @apply dark:text-white
 }
 .offer-box .box-inner ul li a::before {
   content: "";
@@ -1687,6 +1722,7 @@ Offer Area CSS
 }
 .offer-box .box-inner ul li a:hover, .offer-box .box-inner ul li a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .offer-box .box-inner ul li a:hover::before, .offer-box .box-inner ul li a:focus::before {
   width: 100%;
@@ -1830,6 +1866,7 @@ All Products Area CSS
 }
 .products-category-tab .react-tabs__tab-list li .tabs-nav-text:hover, .products-category-tab .react-tabs__tab-list li .tabs-nav-text:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .products-category-tab .react-tabs__tab-list li .tabs-nav-text:hover .dot, .products-category-tab .react-tabs__tab-list li .tabs-nav-text:focus .dot {
   border-color: #222222;
@@ -1839,6 +1876,7 @@ All Products Area CSS
 }
 .products-category-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text {
   color: #222222;
+  @apply dark:text-white
 }
 .products-category-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text .dot {
   border-color: #222222;
@@ -1861,6 +1899,7 @@ All Products Area CSS
 }
 .single-product-box .product-image img {
   width: 100%;
+  @apply rounded-2xl;
 }
 .single-product-box .product-image img:nth-child(2) {
   position: absolute;
@@ -1892,6 +1931,7 @@ All Products Area CSS
   line-height: 38px;
   background-color: #ffffff;
   color: #222222;
+  @apply dark:text-white;
   border-radius: 50%;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   border: none;
@@ -1906,6 +1946,7 @@ All Products Area CSS
   color: #222222 !important;
   background: green !important;
   color: #fff !important;
+  @apply dark:text-white;
 }
 .single-product-box .product-image ul li:last-child {
   margin-bottom: 0;
@@ -1935,6 +1976,7 @@ All Products Area CSS
   background-color: rgba(255, 255, 255, 0.9);
   padding: 8px 15px;
   color: #222222;
+  @apply dark:text-white;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
@@ -1944,6 +1986,7 @@ All Products Area CSS
   font-size: 13px;
   font-weight: normal;
   color: #666666;
+  
 }
 .single-product-box .product-content {
   margin-top: 20px;
@@ -1954,9 +1997,11 @@ All Products Area CSS
 }
 .single-product-box .product-content h3 a {
   color: #222222;
+  @apply dark:text-white;
 }
 .single-product-box .product-content h3 a:hover, .single-product-box .product-content h3 a:focus {
   color: #222222;
+  @apply dark:text-white;
 }
 .single-product-box .product-content .product-price {
   margin-top: 10px;
@@ -1995,6 +2040,7 @@ All Products Area CSS
 .single-product-box:hover .product-content .btn-light, .single-product-box:focus .product-content .btn-light {
   background-color: #222222;
   color: #ffffff;
+  @apply dark:bg-[#3a3b3c];
 }
 
 .all-products-slides .swiper-pagination {
@@ -2401,6 +2447,7 @@ Facility Area CSS
   background-color: #f5f5f5;
   padding-top: 35px;
   padding-bottom: 35px;
+  @apply dark:bg-[#242526]
 }
 .facility-area.black-bg {
   background-color: #222222;
@@ -2423,6 +2470,7 @@ Facility Area CSS
   border-radius: 50%;
   position: relative;
   z-index: 1;
+  @apply dark:text-white
 }
 .facility-box .icon::before {
   z-index: -1;
@@ -2435,6 +2483,7 @@ Facility Area CSS
   background: #ffffff;
   margin: 6px;
   border-radius: 50%;
+  @apply dark:bg-[#18191a]
 }
 .facility-box .icon i {
   transition: 0.5s;
@@ -2605,9 +2654,11 @@ News Area CSS
 }
 .single-news-post .news-content h3 a {
   color: #222222;
+  @apply dark:text-white
 }
 .single-news-post .news-content h3 a:hover, .single-news-post .news-content h3 a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .single-news-post .news-content .author {
   display: block;
@@ -2618,9 +2669,11 @@ News Area CSS
 .single-news-post .news-content .author a {
   display: inline-block;
   color: #222222;
+  @apply dark:text-white
 }
 .single-news-post .news-content .author a:hover, .single-news-post .news-content .author a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .single-news-post .news-content p {
   margin-bottom: 20px;
@@ -2630,6 +2683,7 @@ News Area CSS
   margin-bottom: 30px;
   background-color: #ffffff;
   box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.06);
+  @apply dark:bg-[#3a3b3c]
 }
 .single-blog-post .blog-image {
   position: relative;
@@ -2674,9 +2728,11 @@ News Area CSS
 }
 .single-blog-post .blog-post-content h3 a {
   color: #222222;
+  @apply dark:text-white
 }
 .single-blog-post .blog-post-content h3 a:hover, .single-blog-post .blog-post-content h3 a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .single-blog-post .blog-post-content p {
   margin-bottom: 15px;
@@ -2685,10 +2741,12 @@ News Area CSS
   position: relative;
   font-weight: 500;
   color: #666666;
+  @apply dark:text-white
 }
 .single-blog-post .read-more-btn:hover {
   color: #222222;
   letter-spacing: 1px;
+  @apply dark:text-white
 }
 .single-blog-post:hover .blog-image a img, .single-blog-post:focus .blog-image a img {
   transform: scale(1.2);
@@ -3077,9 +3135,7 @@ blockquote cite::before {
 /*================================================
 Subscribe Area CSS
 =================================================*/
-.subscribe-area {
-  border-top: 1px solid #f5f5f5;
-}
+
 
 .newsletter-content h3 {
   font-size: 20px;
@@ -3122,6 +3178,7 @@ Partner Area CSS
   background-color: #f5f5f5;
   padding-top: 30px;
   padding-bottom: 30px;
+  @apply dark:bg-[#3a3b3c]
 }
 
 .partner-item {
@@ -3193,6 +3250,7 @@ Page Title Area CSS
   background-color: #f8f8f8;
   padding-top: 12px;
   padding-bottom: 12px;
+  @apply dark:bg-[#3a3b3c]
 }
 .page-title-area ul {
   padding-left: 0;
@@ -3383,6 +3441,7 @@ Products Collections Area CSS
   color: #222222;
   display: inline-block;
   padding-right: 5px;
+  @apply dark:text-white
 }
 .products-filter-options span a {
   text-transform: uppercase;
@@ -3609,6 +3668,7 @@ Woocommerce Sidebar Area CSS
   cursor: pointer;
   position: relative;
   padding: 15px;
+  @apply dark:bg-[#3a3b3c] dark:text-white;
 }
 .woocommerce-sidebar-area .accordion .accordion__button::before {
   float: right;
@@ -3640,6 +3700,7 @@ Woocommerce Sidebar Area CSS
   font-size: 15px;
   transition: 0.5s;
   color: #858585;
+  
 }
 .woocommerce-sidebar-area .selected-filters-wrap-list ul {
   list-style-type: none;
@@ -3712,12 +3773,15 @@ Woocommerce Sidebar Area CSS
 }
 .woocommerce-sidebar-area .collections-list-row li a {
   color: #858585;
+  @apply dark:text-white;
 }
 .woocommerce-sidebar-area .collections-list-row li a:hover, .woocommerce-sidebar-area .collections-list-row li a:focus {
   color: #222222;
+  @apply dark:text-white;
 }
 .woocommerce-sidebar-area .collections-list-row li.active a {
   color: #222222;
+  @apply dark:text-white;
 }
 .woocommerce-sidebar-area .collections-list-row li:last-child {
   margin-bottom: 0;
@@ -3928,9 +3992,11 @@ Woocommerce Sidebar Area CSS
 }
 .woocommerce-sidebar-area .aside-single-products .products-content h3 a {
   color: #222222;
+  @apply dark:text-white
 }
 .woocommerce-sidebar-area .aside-single-products .products-content h3 a:hover, .woocommerce-sidebar-area .aside-single-products .products-content h3 a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .woocommerce-sidebar-area .aside-single-products .products-content .product-price {
   margin-top: 5px;
@@ -3947,6 +4013,7 @@ Woocommerce Sidebar Area CSS
 }
 .woocommerce-sidebar-area .aside-single-products:hover .products-image a img, .woocommerce-sidebar-area .aside-single-products:focus .products-image a img {
   transform: scale(1.2);
+  @apply rounded-2xl
 }
 .woocommerce-sidebar-area .aside-trending-products {
   overflow: hidden;
@@ -3964,6 +4031,7 @@ Woocommerce Sidebar Area CSS
   padding: 20px;
   margin-left: 10px;
   margin-right: 10px;
+  @apply dark:bg-[#3a3b3c]
 }
 .woocommerce-sidebar-area .aside-trending-products .category h4 {
   font-size: 16px;
@@ -3977,6 +4045,7 @@ Woocommerce Sidebar Area CSS
   position: relative;
   display: block;
   z-index: 1;
+  @apply dark:text-white
 }
 .woocommerce-sidebar-area .aside-trending-products img {
   transition: 0.5s;
@@ -4352,19 +4421,23 @@ Contact Area CSS
   font-size: 13px;
   position: relative;
   padding-left: 20px;
+  @apply dark:text-white
 }
 .contact-info .contact-list li i {
   color: #222222;
   position: absolute;
   left: 0;
   top: 2px;
+  @apply dark:text-white
 }
 .contact-info .contact-list li a {
   color: #666666;
   display: inline-block;
+  @apply dark:text-white
 }
 .contact-info .contact-list li a:hover, .contact-info .contact-list li a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .contact-info .contact-list li:last-child {
   margin-bottom: 0;
@@ -4382,6 +4455,7 @@ Contact Area CSS
 }
 .contact-info .opening-hours li span {
   color: #222222;
+  @apply dark:text-white
 }
 .contact-info .opening-hours li:last-child {
   margin-bottom: 0;
@@ -4405,11 +4479,13 @@ Contact Area CSS
   line-height: 35px;
   text-align: center;
   border-radius: 50%;
+  @apply dark:text-white
 }
 .contact-info .social li a:hover, .contact-info .social li a:focus {
   background-color: #222222;
   color: #ffffff;
   border-color: #222222;
+  @apply dark:text-white
 }
 .contact-info .social li:last-child {
   margin-right: 0;
@@ -4429,6 +4505,7 @@ Contact Area CSS
   font-size: 13px;
   text-transform: uppercase;
   color: #666666;
+
 }
 .contact-form #contactForm label span {
   text-transform: lowercase;
@@ -4441,6 +4518,7 @@ Contact Area CSS
   height: 40px;
   border: 1px solid #eeeeee;
   transition: 0.5s;
+  @apply dark:border-none
 }
 .contact-form #contactForm .form-control:focus {
   border-color: #222222;
@@ -6242,6 +6320,7 @@ Footer Area CSS
   position: relative;
   z-index: 1;
   border-top: 1px solid #f3f3f3;
+  @apply dark:bg-[#3a3b3c] dark:border-[#242526]
 }
 
 .single-footer-widget .logo {
@@ -6278,14 +6357,17 @@ Footer Area CSS
   color: #666666;
   margin-bottom: 8px;
   font-size: 13px;
+  @apply dark:text-white
 }
 .single-footer-widget .quick-links li a {
   color: #666666;
   display: inline-block;
+  @apply dark:text-white
 }
 .single-footer-widget .quick-links li a:hover, .single-footer-widget .quick-links li a:focus {
   color: #222222;
   padding-left: 5px;
+  @apply dark:text-white
 }
 .single-footer-widget .quick-links li:last-child {
   margin-bottom: 0;
@@ -6299,14 +6381,17 @@ Footer Area CSS
   color: #666666;
   margin-bottom: 8px;
   font-size: 13px;
+  @apply dark:text-white
 }
 .single-footer-widget .information-links li a {
   color: #666666;
   display: inline-block;
+  @apply dark:text-white
 }
 .single-footer-widget .information-links li a:hover, .single-footer-widget .information-links li a:focus {
   color: #222222;
   padding-left: 5px;
+  @apply dark:text-white
 }
 .single-footer-widget .information-links li:last-child {
   margin-bottom: 0;
@@ -6322,19 +6407,23 @@ Footer Area CSS
   font-size: 13px;
   position: relative;
   padding-left: 20px;
+  @apply dark:text-white
 }
 .single-footer-widget .footer-contact-info li i {
   color: #222222;
   position: absolute;
   left: 0;
   top: 4px;
+  @apply dark:text-white
 }
 .single-footer-widget .footer-contact-info li a {
   color: #666666;
   display: inline-block;
+  @apply dark:text-white
 }
 .single-footer-widget .footer-contact-info li a:hover, .single-footer-widget .footer-contact-info li a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .single-footer-widget .footer-contact-info li:last-child {
   margin-bottom: 0;
@@ -6345,6 +6434,7 @@ Footer Area CSS
   background-color: #f5f5f5;
   padding-top: 15px;
   padding-bottom: 15px;
+  @apply dark:bg-[#242526]
 }
 .copyright-area .payment-card {
   padding: 0;
@@ -7292,6 +7382,7 @@ All Products Area CSS
   border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
+  @apply dark:text-white
 }
 .product-box .product-image #timer div span {
   display: block;
@@ -7308,9 +7399,11 @@ All Products Area CSS
 }
 .product-box .product-content h3 a {
   color: #222222;
+  @apply dark:text-white
 }
 .product-box .product-content h3 a:hover, .product-box .product-content h3 a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .product-box .product-content .product-price {
   margin-top: 8px;
@@ -7846,6 +7939,7 @@ Pagination CSS
   text-align: left;
   z-index: 5;
   border: 1px solid #eee;
+  @apply dark:bg-[#242526] dark:border-[#3a3b3c]
 }
 .lang-dropdown .dropdown-list li {
   margin-right: 0 !important;

@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const Footer = () => {
+  const { theme, setTheme } = useTheme();
   return (
     <>
       <footer className="footer-area">
@@ -11,7 +13,7 @@ const Footer = () => {
               <div className="single-footer-widget">
                 <div className="logo">
                   <Link href="/">
-                    <img src="/images/logo.png" alt="logo" />
+                    <img src={theme === 'light' ? `/images/LB4ALL LOGO-04 (1).png` : `/images/white-logo.png`} alt="logo" />
                   </Link>
                 </div>
 
