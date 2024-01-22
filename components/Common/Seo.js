@@ -26,6 +26,10 @@ const SEO = ({ title, description, keywords, author, image }) => {
       <meta name="twitter:title" content={title || siteName} />
       <meta name="twitter:description" content={description || 'Your default description here.'} />
       <meta name="twitter:image" content={image || 'https://yourwebsite.com/twitter-image.jpg'} /> {/* Replace with your actual image URL */}
+      <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap"
+    />
     </Head>
   );
 };
