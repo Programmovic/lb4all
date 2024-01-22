@@ -426,7 +426,8 @@ Top Header Area CSS
   margin-right: 17px;
   line-height: initial;
 }
-.top-header-right-nav li a {
+.top-header-right-nav li a,
+.top-header-right-nav li div {
   color: #222222;
   @apply dark:text-white;
   font-size: 15px;
@@ -436,7 +437,8 @@ Top Header Area CSS
 .top-header-right-nav li a i {
   margin-left: 2px;
 }
-.top-header-right-nav li a::before {
+.top-header-right-nav li a::before,
+.top-header-right-nav li div::before  {
   content: "";
   position: absolute;
   bottom: 0;
@@ -447,13 +449,20 @@ Top Header Area CSS
   @apply dark:bg-white;
   transition: 0.5s;
 }
-.top-header-right-nav li a:hover, .top-header-right-nav li a:focus {
+.top-header-right-nav li a:hover,
+.top-header-right-nav li div:hover, 
+.top-header-right-nav li a:focus,
+.top-header-right-nav li div:focus{
   color: #222222;
   @apply dark:text-white;
 }
-.top-header-right-nav li a:hover::before, .top-header-right-nav li a:focus::before {
+.top-header-right-nav li a:hover::before,
+.top-header-right-nav li a:focus::before,
+.top-header-right-nav li div:hover::before,
+.top-header-right-nav li div:focus::before {
   width: 100%;
 }
+
 .top-header-right-nav li::before {
   content: "";
   position: absolute;
