@@ -4661,6 +4661,7 @@ Products Details Area CSS
 }
 .product-details-content h3 a {
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content h3 a:hover {
   color: #222222;
@@ -4675,6 +4676,7 @@ Products Details Area CSS
   display: inline-block;
   font-size: 18px;
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content .product-review {
   margin-bottom: 12px;
@@ -4690,6 +4692,7 @@ Products Details Area CSS
 .product-details-content .product-review .rating-count {
   display: inline-block;
   color: #222222;
+  @apply dark:text-white;
   border-bottom: 1px solid #222222;
   line-height: initial;
 }
@@ -4703,20 +4706,24 @@ Products Details Area CSS
   font-size: 16px;
   color: #222222;
   margin-bottom: 8px;
+  @apply dark:text-white
 }
 .product-details-content .product-info li:last-child {
   margin-bottom: 0;
 }
 .product-details-content .product-info li span {
   color: #666666;
+  @apply dark:text-white
 }
 .product-details-content .product-info li a {
   display: inline-block;
   font-weight: 500;
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content .product-info li a:hover {
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content .wishlist-compare-btn {
   margin-top: 20px;
@@ -4733,6 +4740,7 @@ Products Details Area CSS
 .product-details-content .product-color-switch h4 {
   font-size: 16px;
   color: #666666;
+  @apply dark:text-white;
   margin-bottom: 6px;
 }
 .product-details-content .product-color-switch ul {
@@ -4812,6 +4820,7 @@ Products Details Area CSS
 }
 .product-details-content .product-color-switch ul li.active a {
   border-color: #222222;
+  @apply dark:border-white
 }
 .product-details-content .product-size-wrapper {
   margin-top: 8px;
@@ -4821,6 +4830,7 @@ Products Details Area CSS
   font-size: 16px;
   color: #666666;
   margin-bottom: 8px;
+  @apply dark:text-white
 }
 .product-details-content .product-size-wrapper ul {
   list-style-type: none;
@@ -4842,14 +4852,17 @@ Products Details Area CSS
   border: 1px solid #eeeeee;
   color: #858585;
   text-align: center;
+  @apply dark:text-white
 }
 .product-details-content .product-size-wrapper ul li a:hover, .product-details-content .product-size-wrapper ul li a:focus {
   border-color: #222222;
   color: #222222;
+  
 }
 .product-details-content .product-size-wrapper ul li.active a {
   border-color: #222222;
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content .product-add-to-cart .input-counter {
   max-width: 130px;
@@ -4869,6 +4882,7 @@ Products Details Area CSS
   height: 100%;
   line-height: 50px;
   transition: 0.5s;
+  @apply dark:text-white
 }
 .product-details-content .product-add-to-cart .input-counter span.minus-btn {
   left: 0;
@@ -4878,6 +4892,7 @@ Products Details Area CSS
 }
 .product-details-content .product-add-to-cart .input-counter span:hover {
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content .product-add-to-cart .input-counter input {
   height: 45px;
@@ -4890,6 +4905,7 @@ Products Details Area CSS
   width: 100%;
   font-size: 17px;
   font-weight: 600;
+  @apply dark:bg-[#3a3b3c] dark:text-white
 }
 .product-details-content .product-add-to-cart .input-counter input::-moz-placeholder {
   color: #222222;
@@ -4915,6 +4931,7 @@ Products Details Area CSS
   display: inline-block;
   position: relative;
   line-height: initial;
+  @apply dark:text-white
 }
 .product-details-content .product-info-btn a::before {
   content: "";
@@ -4930,9 +4947,11 @@ Products Details Area CSS
   color: #222222;
   margin-right: 3px;
   font-size: 15px;
+  @apply dark:text-white
 }
 .product-details-content .product-info-btn a:hover {
   color: #222222;
+  @apply dark:text-white
 }
 .product-details-content .product-info-btn a:hover::before {
   width: 100%;
@@ -4999,6 +5018,7 @@ Products Details Area CSS
 .product-details-content .buy-checkbox-btn .cbx span:last-child {
   padding-left: 10px;
   color: #666666;
+  @apply dark:text-white
 }
 .product-details-content .buy-checkbox-btn .cbx:hover span:first-child {
   border-color: #222222;
@@ -5029,6 +5049,7 @@ Products Details Area CSS
   display: block;
   color: #666666;
   margin-bottom: 5px;
+  @apply dark:text-white
 }
 .product-details-content .custom-payment-options .payment-methods a {
   display: inline-block;
@@ -5066,6 +5087,7 @@ Products Details Area CSS
   text-transform: uppercase;
   color: #666666;
   cursor: pointer;
+  @apply dark:text-white
 }
 .products-details-tab .react-tabs__tab-list li .tabs-nav-text .dot, .products-details-tab .react-tabs__tab-list li a .dot {
   position: absolute;
@@ -5089,6 +5111,7 @@ Products Details Area CSS
 }
 .products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus, .products-details-tab .react-tabs__tab-list li a:hover, .products-details-tab .react-tabs__tab-list li a:focus {
   color: #222222;
+  @apply dark:text-white
 }
 .products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover .dot, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus .dot, .products-details-tab .react-tabs__tab-list li a:hover .dot, .products-details-tab .react-tabs__tab-list li a:focus .dot {
   border-color: #222222;
@@ -5098,6 +5121,7 @@ Products Details Area CSS
 }
 .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text, .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a {
   color: #222222;
+  @apply dark:text-white
 }
 .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text .dot, .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a .dot {
   border-color: #222222;
@@ -5111,6 +5135,7 @@ Products Details Area CSS
 .products-details-tab .products-details-tab-content ul li, .products-details-tab .products-details-tab-content ol li {
   margin-bottom: 10px;
   color: #666666;
+  @apply dark:text-white
 }
 .products-details-tab .products-details-tab-content ul li:last-child, .products-details-tab .products-details-tab-content ol li:last-child {
   margin-bottom: 0;
