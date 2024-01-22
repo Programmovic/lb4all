@@ -25,8 +25,8 @@ const Navbar = () => {
   });
 
   const classOne = menu
-    ? "navbar-collapse mean-menu"
-    : "navbar-collapse show";
+    ? "collapse navbar-collapse mean-menu"
+    : "collapse navbar-collapse show";
   const classTwo = menu
     ? "navbar-toggler navbar-toggler-right collapsed"
     : "navbar-toggler navbar-toggler-right";
