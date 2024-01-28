@@ -20,9 +20,10 @@ async function connectToDatabase() {
 connectToDatabase();
 
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 app.use('/users', userRoutes);
-
+app.use('/products', productRoutes);
 
 app.listen(PORT, () => {
     console.log(`Serverr is running on http://localhost:${PORT}`);

@@ -9,7 +9,7 @@ const isStrongPassword = require('../utils/passwordStrength');
 // Signup
 router.post('/signup', async (req, res) => {
     try {
-        const { Username, Email, Password } = req.body;
+        const { Username, Email, Phone, Password } = req.body;
 
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
@@ -23,6 +23,10 @@ router.post('/signup', async (req, res) => {
             return res.status(409).json({ message: `${Email} is already registered.` });
         }
 
+        const existingPhone = await User.findOne({ Phone });
+        if (existingPhone) {
+            return res.status(409).json({ message: `${Phone} is already registered.` });
+        }
         // Check password strength
         if (!isStrongPassword(Password)) {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });

@@ -12,7 +12,11 @@ const userSchema = new mongoose.Schema({
   LastName: { type: String },
   Address: { type: String },
   Phone: { type: String },
-  RoleID: { type: mongoose.Schema.Types.ObjectId, ref: 'UserRole' },
+  Photo: { type: String }, // Assuming Photo is a URL or file path
+  BrandID: { type: mongoose.Schema.Types.ObjectId, ref: 'Brand' }, // Reference to Brand model
+},
+{
+  timestamps: true, // Add timestamps to the schema
 });
 
 // Hash the password before saving
@@ -21,14 +25,14 @@ userSchema.pre('save', async function (next) {
     if (this.isModified('Password')) {
       this.Password = await bcrypt.hash(this.Password, saltRounds);
     }
-    
+
     // Check if UserID is not set (i.e., for new documents)
     if (!this.UserID) {
       // Find the highest existing UserID and increment by 1
       const highestUser = await this.constructor.findOne({}, { UserID: 1 }, { sort: { UserID: -1 } });
       this.UserID = highestUser ? highestUser.UserID + 1 : 1;
     }
-    
+
     next();
   } catch (error) {
     // Handle duplicate key error
