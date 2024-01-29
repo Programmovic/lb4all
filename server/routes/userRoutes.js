@@ -4,6 +4,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
+const WishList = require('../models/Wishlist');
 
 router.get('/search', async (req, res) => {
     try {
@@ -155,6 +156,24 @@ router.delete('/:userID', async (req, res) => {
     }
 });
 
+router.get('/:userID/wishlist', verifyToken, async (req, res) => {
+    try {
+        const { userID } = req.params;
 
+        // Ensure the logged-in user is the same as the requested user
+        if (userID !== req.userData.UserID) {
+            return res.status(403).json({ error: 'Access forbidden' });
+        }
+
+        // Fetch the wishlist for the specified user
+        const wishlist = await WishList.find({ UserID: userID })
+            .populate('ProductID', 'ProductName Price') // Example: Replace with fields you want to populate
+            .exec();
+
+        res.status(200).json(wishlist);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 module.exports = router;
