@@ -97,11 +97,19 @@ router.delete('/:userID', async (req, res) => {
 
 router.get('/search', async (req, res) => {
     try {
-        const { query } = req.body;
-        console.log(query);
+        const { query } = req.query;
 
-        // Use a case-insensitive regex to search for users by Username or Email
-        const users = await User.find({ Username: query });
+        // Use a case-insensitive regex to search for users in all relevant fields
+        const users = await User.find({
+            $or: [
+                { Username: { $regex: new RegExp(query, 'i') } },
+                { Email: { $regex: new RegExp(query, 'i') } },
+                { FirstName: { $regex: new RegExp(query, 'i') } },
+                { LastName: { $regex: new RegExp(query, 'i') } },
+                { Address: { $regex: new RegExp(query, 'i') } },
+                { Phone: { $regex: new RegExp(query, 'i') } },
+            ]
+        });
 
         res.status(200).json(users);
     } catch (error) {
