@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
+const Order = require('../models/Order');
 
 router.get('/search', async (req, res) => {
     try {
@@ -175,5 +176,17 @@ router.get('/:userID/wishlist', verifyToken, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+// Get user orders
+router.get('/:userID/orders', async (req, res) => {
+    try {
+        const { userID } = req.params;
 
+        // Use the provided user ID to find orders for that user
+        const userOrders = await Order.find({ UserID: userID });
+
+        res.status(200).json(userOrders);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 module.exports = router;
