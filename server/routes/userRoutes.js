@@ -95,4 +95,21 @@ router.delete('/:userID', async (req, res) => {
     }
 });
 
+router.get('/search', async (req, res) => {
+    try {
+        const { query } = req;
+        console.log(query)
+        // Use a case-insensitive regex to search for users by Username or Email
+        const users = await User.find({
+            $or: [
+                { Username: { $regex: new RegExp(query, 'i') } },
+                { Email: { $regex: new RegExp(query, 'i') } }
+            ]
+        });
+
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 module.exports = router;
