@@ -5,6 +5,28 @@ const jwt = require('jsonwebtoken');
 const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
 
+router.get('/search', async (req, res) => {
+    try {
+        const { query } = req.query;
+
+        // Use a case-insensitive regex to search for users in all relevant fields
+        const users = await User.find({
+            $or: [
+                { Username: { $regex: new RegExp(query, 'i') } },
+                { Email: { $regex: new RegExp(query, 'i') } },
+                { FirstName: { $regex: new RegExp(query, 'i') } },
+                { LastName: { $regex: new RegExp(query, 'i') } },
+                { Address: { $regex: new RegExp(query, 'i') } },
+                { Phone: { $regex: new RegExp(query, 'i') } },
+            ]
+        });
+
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 
 // Signup
 router.post('/signup', async (req, res) => {
@@ -95,26 +117,6 @@ router.delete('/:userID', async (req, res) => {
     }
 });
 
-router.get('/search', async (req, res) => {
-    try {
-        const { query } = req.query;
 
-        // Use a case-insensitive regex to search for users in all relevant fields
-        const users = await User.find({
-            $or: [
-                { Username: { $regex: new RegExp(query, 'i') } },
-                { Email: { $regex: new RegExp(query, 'i') } },
-                { FirstName: { $regex: new RegExp(query, 'i') } },
-                { LastName: { $regex: new RegExp(query, 'i') } },
-                { Address: { $regex: new RegExp(query, 'i') } },
-                { Phone: { $regex: new RegExp(query, 'i') } },
-            ]
-        });
-
-        res.status(200).json(users);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
 
 module.exports = router;
