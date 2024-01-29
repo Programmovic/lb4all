@@ -97,7 +97,7 @@ router.delete('/:userID', async (req, res) => {
 
 router.get('/search', async (req, res) => {
     try {
-        const { query } = req.query;
+        const { query } = req.body;
         console.log(query);
 
         // Use a case-insensitive regex to search for users by Username or Email
