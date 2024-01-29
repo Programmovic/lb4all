@@ -123,6 +123,21 @@ router.get('/:userID', async (req, res) => {
 // Update a user by ID
 router.put('/:userID', async (req, res) => {
     try {
+        // Check if the new username or email already exists
+        const existingUser = await User.findOne({
+            $or: [
+                { Username: req.body.Username },
+                { Email: req.body.Email },
+            ],
+            _id: { $ne: req.params.userID }, // Exclude the current user being updated
+        });
+
+        if (existingUser) {
+            // If a user with the same username or email exists, return a conflict error
+            return res.status(409).json({ error: 'Duplicate username or email' });
+        }
+
+        // Perform the update if no duplicates are found
         const updatedUser = await User.findByIdAndUpdate(req.params.userID, req.body, { new: true });
         res.status(200).json(updatedUser);
     } catch (error) {
