@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -18,6 +18,7 @@ async function connectToDatabase() {
 
 // Call the function to connect to the database
 connectToDatabase();
+
 // Middleware to log IP address
 const logIpAddress = (req, res, next) => {
     const ip = req.ip || req.connection.remoteAddress;
@@ -34,6 +35,7 @@ const productRoutes = require('./routes/productRoutes');
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Serverr is running on http://localhost:${PORT}`);
+const server = app.listen(PORT, () => {
+    const address = server.address();
+    console.log(`Server is running on http://localhost:${address.port}`);
 });
