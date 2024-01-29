@@ -31,36 +31,59 @@ router.get('/search', async (req, res) => {
 // Signup
 router.post('/signup', async (req, res) => {
     try {
-        const { Username, Email, Phone, Password } = req.body;
-
-        // Check if a user with the same username already exists
-        const existingUsername = await User.findOne({ Username });
-        if (existingUsername) {
-            return res.status(409).json({ message: `${Username} is already taken.` });
-        }
-
-        // Check if a user with the same email already exists
-        const existingEmail = await User.findOne({ Email });
-        if (existingEmail) {
-            return res.status(409).json({ message: `${Email} is already registered.` });
-        }
-
-        const existingPhone = await User.findOne({ Phone });
-        if (existingPhone) {
-            return res.status(409).json({ message: `${Phone} is already registered.` });
-        }
-        // Check password strength
-        if (!isStrongPassword(Password)) {
-            return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
-        }
-
-        // If no duplicate and password is strong, create a new user
-        const newUser = await User.create(req.body);
-        res.status(201).json(newUser);
+      const {
+        Username,
+        Password,
+        Email,
+        FirstName,
+        LastName,
+        Address,
+        Phone,
+        UserID,
+        // Add other fields as needed
+      } = req.body;
+  
+      // Check if a user with the same username already exists
+      const existingUsername = await User.findOne({ Username });
+      if (existingUsername) {
+        return res.status(409).json({ message: `${Username} is already taken.` });
+      }
+  
+      // Check if a user with the same email already exists
+      const existingEmail = await User.findOne({ Email });
+      if (existingEmail) {
+        return res.status(409).json({ message: `${Email} is already registered.` });
+      }
+  
+      const existingPhone = await User.findOne({ Phone });
+      if (existingPhone) {
+        return res.status(409).json({ message: `${Phone} is already registered.` });
+      }
+  
+      // Check password strength
+      if (!isStrongPassword(Password)) {
+        return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
+      }
+  
+      // If no duplicate and password is strong, create a new user
+      const newUser = await User.create({
+        Username,
+        Password,
+        Email,
+        FirstName,
+        LastName,
+        Address,
+        Phone,
+        UserID,
+        // Add other fields as needed
+      });
+  
+      res.status(201).json(newUser);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message });
     }
-});
+  });
+  
 // Login
 router.post('/login', async (req, res) => {
     try {
