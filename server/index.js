@@ -18,6 +18,15 @@ async function connectToDatabase() {
 
 // Call the function to connect to the database
 connectToDatabase();
+// Middleware to log IP address
+const logIpAddress = (req, res, next) => {
+    const ip = req.ip || req.connection.remoteAddress;
+    console.log(`Request from IP: ${ip}`);
+    next();
+};
+
+// Apply middleware to log IP address for all routes
+app.use(logIpAddress);
 
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');

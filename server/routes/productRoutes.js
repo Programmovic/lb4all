@@ -4,16 +4,6 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product'); // Adjust the path as needed
 
-// Middleware to log IP address
-const logIpAddress = (req, res, next) => {
-    const ip = req.ip || req.connection.remoteAddress;
-    console.log(`Request from IP: ${ip}`);
-    next();
-};
-
-// Apply middleware to log IP address for all routes
-router.use(logIpAddress);
-
 // Get all products
 router.get('/', async (req, res) => {
     try {
