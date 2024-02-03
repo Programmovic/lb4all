@@ -35,9 +35,11 @@ app.use(logIpAddress);
 
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
 
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
+app.use('/categories', categoryRoutes);
 
 const server = app.listen(PORT, () => {
     const address = server.address();
