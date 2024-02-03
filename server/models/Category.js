@@ -7,21 +7,28 @@ const categorySchema = new mongoose.Schema({
   timestamps: true,
 });
 
-categorySchema.pre('save', function (next) {
-  const doc = this;
-  if (!doc.isNew) {
-    return next();
-  }
-
-  // Auto-increment CategoryID starting from 1
-  mongoose.model('Category').countDocuments({}, (err, count) => {
-    if (err) {
-      return next(err);
+// Assuming you have a categorySchema for the Category model
+categorySchema.pre('save', async function (next) {
+  try {
+    // Auto-increment CategoryID if not set (for new documents)
+    if (!this.CategoryID) {
+      this.CategoryID = await this.constructor.getNewID('CategoryID');
     }
-    doc.CategoryID = count + 1;
+
+    // Other pre-save logic for the Category schema
+
     next();
-  });
+  } catch (error) {
+    // Handle errors
+    throw error;
+  }
 });
+
+// Static method to get a new ID (CategoryID)
+categorySchema.statics.getNewID = async function (field) {
+  const highestDoc = await this.findOne({}, { [field]: 1 }, { sort: { [field]: -1 } });
+  return highestDoc ? highestDoc[field] + 1 : 1;
+};
 
 const Category = mongoose.model('Category', categorySchema);
 
