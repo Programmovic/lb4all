@@ -9,11 +9,12 @@ router.get('/search', async (req, res) => {
             return res.status(400).json({ error: 'Search query parameter is required' });
         }
 
-        const regex = new RegExp(searchQuery, 'i'); // Case-insensitive search
+        const isNumeric = !isNaN(searchQuery);
+        
         const categories = await Category.find({
             $or: [
-                { CategoryID: { $regex: regex } },
-                { CategoryName: { $regex: regex } },
+                { CategoryID: isNumeric ? parseInt(searchQuery) : null }, // Check if it's a number
+                { CategoryName: { $regex: new RegExp(searchQuery, 'i') } },
             ],
         });
 
@@ -22,6 +23,7 @@ router.get('/search', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 // Create a new category
 router.post('/', async (req, res) => {
