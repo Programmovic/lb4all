@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const categorySchema = new mongoose.Schema({
-  CategoryID: { type: Number, required: true, unique: true },
+  CategoryID: { type: Number, unique: true },
   CategoryName: { type: String, required: true },
 }, {
   timestamps: true,
@@ -11,7 +11,7 @@ const categorySchema = new mongoose.Schema({
 categorySchema.pre('save', async function (next) {
   try {
     // Auto-increment CategoryID if not set (for new documents)
-    if (!this.CategoryID) {
+    if (this.isNew && !this.CategoryID) {
       this.CategoryID = await this.constructor.getNewID('CategoryID');
     }
 
