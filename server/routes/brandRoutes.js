@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Brand = require('../models/Brand');
+const mongoose = require('mongoose');
 
 router.get('/search', async (req, res) => {
     try {
@@ -50,7 +51,12 @@ router.get('/:id', async (req, res) => {
 // Create a new brand
 router.post('/', async (req, res) => {
     try {
+        // Cast RoleId to ObjectId
+        req.body.RoleID = mongoose.Types.ObjectId(req.body.RoleID);
+
+        // Create a new Brand
         const newBrand = await Brand.create(req.body);
+
         res.status(201).json(newBrand);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
