@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
         const userRoles = await UserRole.find();
         res.json(userRoles);
     } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error });
     }
 });
 
@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
         const newUserRole = await UserRole.create(req.body);
         res.status(201).json(newUserRole);
     } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error });
     }
 });
 
