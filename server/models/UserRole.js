@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userRoleSchema = new mongoose.Schema({
-  RoleID: { type: String, unique: true }, // Make RoleID optional
+  RoleID: { type: Number, unique: true }, // Make RoleID optional
   RoleName: { type: String, required: true },
 }, { timestamps: true });  // Add timestamps to the schema
 
