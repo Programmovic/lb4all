@@ -37,11 +37,13 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const roleRoutes = require('./routes/roleRoutes');
+const brandRoutes = require('./routes/brandRoutes');
 
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/roles', roleRoutes);
+app.use('/brands', brandRoutes);
 
 const server = app.listen(PORT, () => {
     const address = server.address();
