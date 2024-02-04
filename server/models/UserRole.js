@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const userRoleSchema = new mongoose.Schema({
-  RoleID: { type: String, required: true, unique: true },
+  RoleID: { type: String, unique: true }, // Make RoleID optional
   RoleName: { type: String, required: true },
 }, { timestamps: true });  // Add timestamps to the schema
 
-// Pre-save middleware for auto-incrementing RoleID
+// Pre-save middleware for auto-incrementing RoleID and ensuring uniqueness
 userRoleSchema.pre('save', async function (next) {
   try {
     // Auto-increment RoleID if not set (for new documents)
@@ -13,12 +13,18 @@ userRoleSchema.pre('save', async function (next) {
       this.RoleID = await this.constructor.getNewID('RoleID');
     }
 
+    // Check for uniqueness before saving
+    const existingRole = await this.constructor.findOne({ RoleID: this.RoleID });
+    if (existingRole) {
+      throw new Error('RoleID must be unique');
+    }
+
     // Other pre-save logic for the UserRole schema
 
     next();
   } catch (error) {
     // Handle errors
-    throw error;
+    next(error);
   }
 });
 
