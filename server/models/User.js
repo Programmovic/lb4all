@@ -15,9 +15,9 @@ const userSchema = new mongoose.Schema({
   Photo: { type: String }, // Assuming Photo is a URL or file path
   BrandID: { type: mongoose.Schema.Types.ObjectId, ref: 'Brand' }, // Reference to Brand model
 },
-{
-  timestamps: true, // Add timestamps to the schema
-});
+  {
+    timestamps: true, // Add timestamps to the schema
+  });
 
 // Hash the password before saving
 userSchema.pre('save', async function (next) {
