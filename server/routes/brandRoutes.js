@@ -52,7 +52,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         // Cast RoleId to ObjectId
-        req.body.RoleID = mongoose.Types.ObjectId(req.body.RoleID);
+        req.body.RoleID = new mongoose.Types.ObjectId(req.body.RoleID);
 
         // Create a new Brand
         const newBrand = await Brand.create(req.body);
@@ -62,6 +62,7 @@ router.post('/', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 // Update a brand by ID
 router.put('/:id', async (req, res) => {
