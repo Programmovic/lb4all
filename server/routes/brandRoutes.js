@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
         const brands = await Brand.find();
         res.json(brands);
     } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: error.message });
     }
 });
 
