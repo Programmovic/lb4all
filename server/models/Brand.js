@@ -29,10 +29,14 @@ brandSchema.pre('save', async function (next) {
   }
 });
 
-// Static method to get a new ID (BrandID)
 brandSchema.statics.getNewID = async function (field) {
   const highestDoc = await this.findOne({}, { [field]: 1 }, { sort: { [field]: -1 } });
-  return highestDoc ? highestDoc[field] + 1 : 1;
+
+  if (highestDoc && highestDoc[field] !== undefined) {
+    return highestDoc[field] + 1;
+  } else {
+    return 1;
+  }
 };
 
 const Brand = mongoose.model('Brand', brandSchema);
