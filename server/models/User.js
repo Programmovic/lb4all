@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   LastName: { type: String },
   Address: { type: String },
   Phone: { type: String },
-  Photo: { type: String }, // Assuming Photo is a URL or file path
+  Photo: { data: Buffer, contentType: String }, // Store image data as Buffer and content type as String
   BrandID: { type: mongoose.Schema.Types.ObjectId, ref: 'Brand' }, // Reference to Brand model
 },
   {
