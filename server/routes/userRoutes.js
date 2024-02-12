@@ -6,6 +6,21 @@ const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
+const multer = require('multer');
+
+// Set up Multer storage configuration
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads'); // Set the upload directory
+    },
+    filename: function (req, file, cb) {
+        const ext = file.originalname.split('.').pop(); // Get the file extension
+        cb(null, Date.now() + '.' + ext); // Set the filename to be unique
+    }
+});
+
+// Set up Multer instance
+const upload = multer({ storage: storage });
 
 router.get('/search', async (req, res) => {
     try {
@@ -31,61 +46,66 @@ router.get('/search', async (req, res) => {
 
 
 // Signup
-router.post('/signup', async (req, res) => {
+router.post('/signup', upload.single('photo'), async (req, res) => {
     try {
-      const {
-        Username,
-        Password,
-        Email,
-        FirstName,
-        LastName,
-        Address,
-        Phone,
-        UserID,
-        // Add other fields as needed
-      } = req.body;
-  
-      // Check if a user with the same username already exists
-      const existingUsername = await User.findOne({ Username });
-      if (existingUsername) {
-        return res.status(409).json({ message: `${Username} is already taken.` });
-      }
-  
-      // Check if a user with the same email already exists
-      const existingEmail = await User.findOne({ Email });
-      if (existingEmail) {
-        return res.status(409).json({ message: `${Email} is already registered.` });
-      }
-  
-      const existingPhone = await User.findOne({ Phone });
-      if (existingPhone) {
-        return res.status(409).json({ message: `${Phone} is already registered.` });
-      }
-  
-      // Check password strength
-      if (!isStrongPassword(Password)) {
-        return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
-      }
-  
-      // If no duplicate and password is strong, create a new user
-      const newUser = await User.create({
-        Username,
-        Password,
-        Email,
-        FirstName,
-        LastName,
-        Address,
-        Phone,
-        UserID,
-        // Add other fields as needed
-      });
-  
-      res.status(201).json(newUser);
+        const {
+            Username,
+            Password,
+            Email,
+            FirstName,
+            LastName,
+            Address,
+            Phone,
+            UserID,
+            // Add other fields as needed
+        } = req.body;
+
+        // Access uploaded photo file via req.file
+        const photo = req.file;
+
+        // Check if a user with the same username already exists
+        const existingUsername = await User.findOne({ Username });
+        if (existingUsername) {
+            return res.status(409).json({ message: `${Username} is already taken.` });
+        }
+
+        // Check if a user with the same email already exists
+        const existingEmail = await User.findOne({ Email });
+        if (existingEmail) {
+            return res.status(409).json({ message: `${Email} is already registered.` });
+        }
+
+        const existingPhone = await User.findOne({ Phone });
+        if (existingPhone) {
+            return res.status(409).json({ message: `${Phone} is already registered.` });
+        }
+
+        // Check password strength
+        if (!isStrongPassword(Password)) {
+            return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
+        }
+
+        // If no duplicate and password is strong, create a new user
+        const newUser = await User.create({
+            Username,
+            Password,
+            Email,
+            FirstName,
+            LastName,
+            Address,
+            Phone,
+            UserID,
+            photo: photo ? photo.filename : null, // Check if photo exists before accessing filename
+            // Add other fields as needed
+        });
+
+        res.status(201).json(newUser);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
-  });
-  
+});
+
+
 // Login
 router.post('/login', async (req, res) => {
     try {
