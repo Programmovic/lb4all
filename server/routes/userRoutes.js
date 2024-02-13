@@ -101,7 +101,7 @@ router.post('/signup', upload.single('photo'), async (req, res) => {
 
         res.status(201).json(newUser);
     } catch (error) {
-        res.status(500).json({ error: error });
+        res.status(500).json({ error });
     }
 });
 
