@@ -20,7 +20,18 @@ const storage = multer.diskStorage({
 });
 
 // Set up Multer instance
-const upload = multer({ storage: storage });
+const upload = multer({ 
+    storage: storage,
+    limits: {
+        fileSize: 10 * 1024 * 1024 // 10 MB file size limit
+    },
+    fileFilter: function (req, file, cb) {
+        if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
+            return cb(new Error('Only image files are allowed.'));
+        }
+        cb(null, true);
+    }
+});
 
 router.get('/search', async (req, res) => {
     try {
