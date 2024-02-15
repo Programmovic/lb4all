@@ -58,7 +58,7 @@ router.get('/search', async (req, res) => {
 
 
 // Signup
-router.post('/signup', upload.single('photo'), async (req, res) => {
+router.post('/signup', upload.single('Photo'), async (req, res) => {
     try {
         const {
             Username,
@@ -72,8 +72,8 @@ router.post('/signup', upload.single('photo'), async (req, res) => {
             // Add other fields as needed
         } = req.body;
 
-        // Access uploaded photo file via req.file
-        const photo = req.file;
+        // Access uploaded Photo file via req.file
+        const Photo = req.file;
 console.log(req.body, req.file)
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
@@ -96,7 +96,7 @@ console.log(req.body, req.file)
         if (!isStrongPassword(Password)) {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
         }
-console.log(`Phot: ${photo}`)
+console.log(`Phot: ${Photo}`)
         // If no duplicate and password is strong, create a new user
         const newUser = await User.create({
             Username,
@@ -107,7 +107,7 @@ console.log(`Phot: ${photo}`)
             Address,
             Phone,
             UserID,
-            photo: photo ? photo.filename : null, // Check if photo exists before accessing filename
+            Photo: Photo ? Photo.filename : null, // Check if Photo exists before accessing filename
             // Add other fields as needed
         });
 
