@@ -63,9 +63,17 @@ router.post('/signup', upload.single("Photo"), async (req, res) => {
             UserID,
             // Add other fields as needed
         } = req.body;
-        const b64 = Buffer.from(req.file.buffer).toString("base64");
-        let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
-        const cldRes = await handleUpload(dataURI);
+
+        let photoUrl; // Declare a variable to store the photo URL
+
+        if (req.file) {
+            // If there's a photo, upload it to Cloudinary
+            const b64 = Buffer.from(req.file.buffer).toString("base64");
+            let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
+            const cldRes = await handleUpload(dataURI);
+            photoUrl = cldRes.secure_url; // Extract the secure URL from the Cloudinary response
+        }
+
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
         if (existingUsername) {
@@ -88,7 +96,6 @@ router.post('/signup', upload.single("Photo"), async (req, res) => {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
         }
 
-
         // If no duplicate and password is strong, create a new user
         const newUser = await User.create({
             Username,
@@ -99,7 +106,7 @@ router.post('/signup', upload.single("Photo"), async (req, res) => {
             Address,
             Phone,
             UserID,
-            Photo: cldRes || null, // Use the secure URL provided by Cloudinary, or null if no photo
+            Photo: photoUrl || null, // Use the photo URL or null if no photo
             // Add other fields as needed
         });
 
@@ -110,6 +117,7 @@ router.post('/signup', upload.single("Photo"), async (req, res) => {
         res.status(500).json({ error });
     }
 });
+
 
 
 // Login
