@@ -11,7 +11,7 @@ const multer = require('multer');
 // Set up Multer storage configuration
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads'); // Set the upload directory
+        cb(null, './/uploads'); // Set the upload directory
     },
     filename: function (req, file, cb) {
         const ext = file.originalname.split('.').pop(); // Get the file extension
