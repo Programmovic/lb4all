@@ -14,11 +14,11 @@ const storage = multer.memoryStorage(); // Store files in memory
 
 // Set up multer middleware
 const upload = multer({
-  storage: storage,
-  limits: {
-    fileSize: 5 * 1024 * 1024, // Limit file size to 5MB
-  },
-}).single('Photo'); // 'photo' should match the name attribute of your file input field
+    storage: storage,
+    limits: {
+        fileSize: 5 * 1024 * 1024, // Limit file size to 5MB
+    },
+}).single('Photo'); // 'Photo' should match the name attribute of your file input field
 
 // Configure Cloudinary with your cloud name, API key, and API secret
 cloudinary.config({
@@ -121,8 +121,6 @@ router.post('/signup', async (req, res) => {
         res.status(500).json({ error });
     }
 });
-
-
 
 // Login
 router.post('/login', async (req, res) => {
