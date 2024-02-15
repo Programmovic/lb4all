@@ -54,73 +54,79 @@ router.post('/signup', async (req, res) => {
     try {
         // Use the upload middleware to handle file upload
         upload(req, res, async (err) => {
-            if (err) {
-                console.log(err)
-                return res.status(400).json({ message: 'File upload error', error: err });
+            try {
+                if (err) {
+                    console.log(err);
+                    return res.status(400).json({ message: 'File upload error', error: err });
+                }
+
+                const {
+                    Username,
+                    Password,
+                    Email,
+                    FirstName,
+                    LastName,
+                    Address,
+                    Phone,
+                    UserID,
+                    // Add other fields as needed
+                } = req.body;
+
+                // Check if a user with the same username already exists
+                const existingUsername = await User.findOne({ Username });
+                if (existingUsername) {
+                    return res.status(409).json({ message: `${Username} is already taken.` });
+                }
+
+                // Check if a user with the same email already exists
+                const existingEmail = await User.findOne({ Email });
+                if (existingEmail) {
+                    return res.status(409).json({ message: `${Email} is already registered.` });
+                }
+
+                const existingPhone = await User.findOne({ Phone });
+                if (existingPhone) {
+                    return res.status(409).json({ message: `${Phone} is already registered.` });
+                }
+
+                // Check password strength
+                if (!isStrongPassword(Password)) {
+                    return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
+                }
+
+                let photoUrl;
+                if (req.file) {
+                    // If there's a photo, upload it to Cloudinary
+                    const photoResult = await cloudinary.uploader.upload(req.file.buffer.toString('base64')); // Convert buffer to base64 string
+                    photoUrl = photoResult.secure_url;
+                }
+
+                // If no duplicate and password is strong, create a new user
+                const newUser = await User.create({
+                    Username,
+                    Password,
+                    Email,
+                    FirstName,
+                    LastName,
+                    Address,
+                    Phone,
+                    UserID,
+                    Photo: photoUrl || null, // Use the secure URL provided by Cloudinary, or null if no photo
+                    // Add other fields as needed
+                });
+
+                res.status(201).json(newUser);
+            } catch (error) {
+                console.log(error);
+                res.status(500).json({ error });
             }
-
-            const {
-                Username,
-                Password,
-                Email,
-                FirstName,
-                LastName,
-                Address,
-                Phone,
-                UserID,
-                // Add other fields as needed
-            } = req.body;
-
-            // Check if a user with the same username already exists
-            const existingUsername = await User.findOne({ Username });
-            if (existingUsername) {
-                return res.status(409).json({ message: `${Username} is already taken.` });
-            }
-
-            // Check if a user with the same email already exists
-            const existingEmail = await User.findOne({ Email });
-            if (existingEmail) {
-                return res.status(409).json({ message: `${Email} is already registered.` });
-            }
-
-            const existingPhone = await User.findOne({ Phone });
-            if (existingPhone) {
-                return res.status(409).json({ message: `${Phone} is already registered.` });
-            }
-
-            // Check password strength
-            if (!isStrongPassword(Password)) {
-                return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
-            }
-
-            let photoUrl;
-            if (req.file) {
-                // If there's a photo, upload it to Cloudinary
-                const photoResult = await cloudinary.uploader.upload(req.file.buffer.toString('base64')); // Convert buffer to base64 string
-                photoUrl = photoResult.secure_url;
-            }
-
-            // If no duplicate and password is strong, create a new user
-            const newUser = await User.create({
-                Username,
-                Password,
-                Email,
-                FirstName,
-                LastName,
-                Address,
-                Phone,
-                UserID,
-                Photo: photoUrl || null, // Use the secure URL provided by Cloudinary, or null if no photo
-                // Add other fields as needed
-            });
-
-            res.status(201).json(newUser);
         });
     } catch (error) {
         console.log(error);
         res.status(500).json({ error });
     }
 });
+
 
 // Login
 router.post('/login', async (req, res) => {
