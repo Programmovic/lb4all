@@ -58,7 +58,7 @@ router.get('/search', async (req, res) => {
 
 
 // Signup
-router.post('/signup', upload.single('photo'), async (req, res) => {
+router.post('/signup', upload.single('Photo'), async (req, res) => {
     try {
         const {
             Username,
