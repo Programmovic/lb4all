@@ -6,13 +6,32 @@ const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
-const cloudinary = require('cloudinary').v2;
+const multer = require('multer');
+const path = require('path');
 
-// Configure Cloudinary with your cloud name, API key, and API secret
-cloudinary.config({
-    cloud_name: 'dffov6dw1',
-    api_key: '353214544668246',
-    api_secret: 'YABFAE4AZkoYcGq2VN9cm4j1Lzo'
+// Set up Multer storage configuration
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, '../uploads')); // Absolute path to the uploads directory
+    },
+    filename: function (req, file, cb) {
+        const ext = file.originalname.split('.').pop(); // Get the file extension
+        cb(null, Date.now() + '.' + ext); // Set the filename to be unique
+    }
+});
+
+// Set up Multer instance
+const upload = multer({ 
+    storage: storage,
+    limits: {
+        fileSize: 10 * 1024 * 1024 // 10 MB file size limit
+    },
+    fileFilter: function (req, file, cb) {
+        if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
+            return cb(new Error('Only image files are allowed.'));
+        }
+        cb(null, true);
+    }
 });
 
 router.get('/search', async (req, res) => {
@@ -37,8 +56,9 @@ router.get('/search', async (req, res) => {
     }
 });
 
+
 // Signup
-router.post('/signup', async (req, res) => {
+router.post('/signup', upload.single('Photo'), async (req, res) => {
     try {
         const {
             Username,
@@ -51,7 +71,10 @@ router.post('/signup', async (req, res) => {
             UserID,
             // Add other fields as needed
         } = req.body;
-        console.log(req.body)
+
+        // Access uploaded Photo file via req.file
+        const Photo = req.file;
+console.log(req.body, req.file)
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
         if (existingUsername) {
@@ -73,14 +96,7 @@ router.post('/signup', async (req, res) => {
         if (!isStrongPassword(Password)) {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
         }
-
-        let photoUrl;
-        if (req.body.Photo) {
-            // If there's a photo, upload it to Cloudinary
-            const photoResult = await cloudinary.uploader.upload(req.body.Photo);
-            photoUrl = photoResult.secure_url;
-        }
-
+console.log(`Phot: ${Photo.filename}`)
         // If no duplicate and password is strong, create a new user
         const newUser = await User.create({
             Username,
@@ -91,16 +107,17 @@ router.post('/signup', async (req, res) => {
             Address,
             Phone,
             UserID,
-            Photo: photoUrl || null, // Use the secure URL provided by Cloudinary, or null if no photo
+            Photo: Photo ? Photo.filename : null, // Check if Photo exists before accessing filename
             // Add other fields as needed
         });
-
+        console.log(newUser)
         res.status(201).json(newUser);
     } catch (error) {
         console.log(error)
         res.status(500).json({ error });
     }
 });
+
 
 // Login
 router.post('/login', async (req, res) => {
@@ -118,7 +135,6 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
 // Get all users
 router.get('/', async (req, res) => {
     try {
@@ -193,7 +209,6 @@ router.get('/:userID/wishlist', verifyToken, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
 // Get user orders
 router.get('/:userID/orders', async (req, res) => {
     try {
@@ -207,5 +222,4 @@ router.get('/:userID/orders', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
 module.exports = router;
