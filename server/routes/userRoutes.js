@@ -10,9 +10,9 @@ const cloudinary = require('cloudinary').v2;
 
 // Configure Cloudinary with your cloud name, API key, and API secret
 cloudinary.config({
-  cloud_name: 'dffov6dw1',
-  api_key: '353214544668246',
-  api_secret: 'YABFAE4AZkoYcGq2VN9cm4j1Lzo'
+    cloud_name: 'dffov6dw1',
+    api_key: '353214544668246',
+    api_secret: 'YABFAE4AZkoYcGq2VN9cm4j1Lzo'
 });
 
 router.get('/search', async (req, res) => {
@@ -51,7 +51,7 @@ router.post('/signup', async (req, res) => {
             UserID,
             // Add other fields as needed
         } = req.body;
-console.log(req)
+        console.log(req.body)
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
         if (existingUsername) {
