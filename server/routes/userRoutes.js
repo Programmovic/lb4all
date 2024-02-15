@@ -9,16 +9,10 @@ const Order = require('../models/Order');
 const cloudinary = require('cloudinary').v2;
 const multer = require('multer');
 
-// Set up multer storage
-const storage = multer.memoryStorage(); // Store files in memory
-
-// Set up multer middleware
+const storage = new Multer.memoryStorage();
 const upload = multer({
-    storage: storage,
-    limits: {
-        fileSize: 5 * 1024 * 1024, // Limit file size to 5MB
-    },
-}).single('Photo'); // 'Photo' should match the name attribute of your file input field
+  storage,
+});
 
 // Configure Cloudinary with your cloud name, API key, and API secret
 cloudinary.config({
@@ -26,7 +20,12 @@ cloudinary.config({
     api_key: '353214544668246',
     api_secret: 'YABFAE4AZkoYcGq2VN9cm4j1Lzo'
 });
-
+async function handleUpload(file) {
+    const res = await cloudinary.uploader.upload(file, {
+        resource_type: "auto",
+    });
+    return res;
+}
 router.get('/search', async (req, res) => {
     try {
         const { query } = req.query;
@@ -50,81 +49,62 @@ router.get('/search', async (req, res) => {
 });
 
 // Signup
-router.post('/signup', async (req, res) => {
+router.post('/signup', upload.single("Photo"), async (req, res) => {
     try {
-        // Use the upload middleware to handle file upload
-        upload(req, res, async (err) => {
-            try {
-                if (err) {
-                    console.log(err);
-                    return res.status(400).json({ message: 'File upload error', error: err });
-                }
+        
+        const {
+            Username,
+            Password,
+            Email,
+            FirstName,
+            LastName,
+            Address,
+            Phone,
+            UserID,
+            // Add other fields as needed
+        } = req.body;
+        const b64 = Buffer.from(req.file.buffer).toString("base64");
+        let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
+        const cldRes = await handleUpload(dataURI);
+        // Check if a user with the same username already exists
+        const existingUsername = await User.findOne({ Username });
+        if (existingUsername) {
+            return res.status(409).json({ message: `${Username} is already taken.` });
+        }
 
-                const {
-                    Username,
-                    Password,
-                    Email,
-                    FirstName,
-                    LastName,
-                    Address,
-                    Phone,
-                    UserID,
-                    // Add other fields as needed
-                } = req.body;
+        // Check if a user with the same email already exists
+        const existingEmail = await User.findOne({ Email });
+        if (existingEmail) {
+            return res.status(409).json({ message: `${Email} is already registered.` });
+        }
 
-                // Check if a user with the same username already exists
-                const existingUsername = await User.findOne({ Username });
-                if (existingUsername) {
-                    return res.status(409).json({ message: `${Username} is already taken.` });
-                }
+        const existingPhone = await User.findOne({ Phone });
+        if (existingPhone) {
+            return res.status(409).json({ message: `${Phone} is already registered.` });
+        }
 
-                // Check if a user with the same email already exists
-                const existingEmail = await User.findOne({ Email });
-                if (existingEmail) {
-                    return res.status(409).json({ message: `${Email} is already registered.` });
-                }
+        // Check password strength
+        if (!isStrongPassword(Password)) {
+            return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
+        }
 
-                const existingPhone = await User.findOne({ Phone });
-                if (existingPhone) {
-                    return res.status(409).json({ message: `${Phone} is already registered.` });
-                }
-
-                // Check password strength
-                if (!isStrongPassword(Password)) {
-                    return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
-                }
-
-                let photoUrl;
-                if (req.file) {
-                    // If there's a photo, upload it to Cloudinary
-                    try {
-                        const photoResult = await cloudinary.uploader.upload(req.file.buffer.toString('base64')); // Convert buffer to base64 string
-                        photoUrl = photoResult.secure_url;
-                    } catch (uploadError) {
-                        console.log(uploadError);
-                        return res.status(500).json({ error: 'Error uploading photo to Cloudinary' });
-                    }
-                }
-                // If no duplicate and password is strong, create a new user
-                const newUser = await User.create({
-                    Username,
-                    Password,
-                    Email,
-                    FirstName,
-                    LastName,
-                    Address,
-                    Phone,
-                    UserID,
-                    Photo: photoUrl || null, // Use the secure URL provided by Cloudinary, or null if no photo
-                    // Add other fields as needed
-                });
-
-                res.status(201).json(newUser);
-            } catch (error) {
-                console.log(error);
-                res.status(500).json({ error });
-            }
+        
+        // If no duplicate and password is strong, create a new user
+        const newUser = await User.create({
+            Username,
+            Password,
+            Email,
+            FirstName,
+            LastName,
+            Address,
+            Phone,
+            UserID,
+            Photo: cldRes || null, // Use the secure URL provided by Cloudinary, or null if no photo
+            // Add other fields as needed
         });
+
+        res.status(201).json(newUser);
+
     } catch (error) {
         console.log(error);
         res.status(500).json({ error });
