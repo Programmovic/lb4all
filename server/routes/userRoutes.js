@@ -7,6 +7,18 @@ const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
 const cloudinary = require('cloudinary').v2;
+const multer = require('multer');
+
+// Set up multer storage
+const storage = multer.memoryStorage(); // Store files in memory
+
+// Set up multer middleware
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024, // Limit file size to 5MB
+  },
+}).single('photo'); // 'photo' should match the name attribute of your file input field
 
 // Configure Cloudinary with your cloud name, API key, and API secret
 cloudinary.config({
@@ -40,67 +52,76 @@ router.get('/search', async (req, res) => {
 // Signup
 router.post('/signup', async (req, res) => {
     try {
-        const {
-            Username,
-            Password,
-            Email,
-            FirstName,
-            LastName,
-            Address,
-            Phone,
-            UserID,
-            // Add other fields as needed
-        } = req.body;
-        console.log(req.body)
-        // Check if a user with the same username already exists
-        const existingUsername = await User.findOne({ Username });
-        if (existingUsername) {
-            return res.status(409).json({ message: `${Username} is already taken.` });
-        }
+        // Use the upload middleware to handle file upload
+        upload(req, res, async (err) => {
+            if (err) {
+                return res.status(400).json({ message: 'File upload error', error: err });
+            }
 
-        // Check if a user with the same email already exists
-        const existingEmail = await User.findOne({ Email });
-        if (existingEmail) {
-            return res.status(409).json({ message: `${Email} is already registered.` });
-        }
+            const {
+                Username,
+                Password,
+                Email,
+                FirstName,
+                LastName,
+                Address,
+                Phone,
+                UserID,
+                // Add other fields as needed
+            } = req.body;
 
-        const existingPhone = await User.findOne({ Phone });
-        if (existingPhone) {
-            return res.status(409).json({ message: `${Phone} is already registered.` });
-        }
+            // Check if a user with the same username already exists
+            const existingUsername = await User.findOne({ Username });
+            if (existingUsername) {
+                return res.status(409).json({ message: `${Username} is already taken.` });
+            }
 
-        // Check password strength
-        if (!isStrongPassword(Password)) {
-            return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
-        }
+            // Check if a user with the same email already exists
+            const existingEmail = await User.findOne({ Email });
+            if (existingEmail) {
+                return res.status(409).json({ message: `${Email} is already registered.` });
+            }
 
-        // let photoUrl;
-        // if (req.body.Photo) {
-        //     // If there's a photo, upload it to Cloudinary
-        //     const photoResult = await cloudinary.uploader.upload(req.body.Photo);
-        //     photoUrl = photoResult.secure_url;
-        // }
+            const existingPhone = await User.findOne({ Phone });
+            if (existingPhone) {
+                return res.status(409).json({ message: `${Phone} is already registered.` });
+            }
 
-        // If no duplicate and password is strong, create a new user
-        const newUser = await User.create({
-            Username,
-            Password,
-            Email,
-            FirstName,
-            LastName,
-            Address,
-            Phone,
-            UserID,
-            Photo: photoUrl || null, // Use the secure URL provided by Cloudinary, or null if no photo
-            // Add other fields as needed
+            // Check password strength
+            if (!isStrongPassword(Password)) {
+                return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
+            }
+
+            let photoUrl;
+            if (req.file) {
+                // If there's a photo, upload it to Cloudinary
+                const photoResult = await cloudinary.uploader.upload(req.file.buffer.toString('base64')); // Convert buffer to base64 string
+                photoUrl = photoResult.secure_url;
+            }
+
+            // If no duplicate and password is strong, create a new user
+            const newUser = await User.create({
+                Username,
+                Password,
+                Email,
+                FirstName,
+                LastName,
+                Address,
+                Phone,
+                UserID,
+                Photo: photoUrl || null, // Use the secure URL provided by Cloudinary, or null if no photo
+                // Add other fields as needed
+            });
+
+            res.status(201).json(newUser);
         });
-
-        res.status(201).json(newUser);
     } catch (error) {
-        console.log(error)
+        console.log(error);
         res.status(500).json({ error });
     }
 });
+
+
 
 // Login
 router.post('/login', async (req, res) => {
