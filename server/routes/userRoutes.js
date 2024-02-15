@@ -55,6 +55,7 @@ router.post('/signup', async (req, res) => {
         // Use the upload middleware to handle file upload
         upload(req, res, async (err) => {
             if (err) {
+                console.log(err)
                 return res.status(400).json({ message: 'File upload error', error: err });
             }
 
