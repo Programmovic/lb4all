@@ -74,7 +74,7 @@ router.post('/signup', upload.single('photo'), async (req, res) => {
 
         // Access uploaded photo file via req.file
         const photo = req.file;
-
+console.log(req.body, req.file)
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
         if (existingUsername) {
