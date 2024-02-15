@@ -51,7 +51,7 @@ router.post('/signup', async (req, res) => {
             UserID,
             // Add other fields as needed
         } = req.body;
-
+console.log(req.body)
         // Check if a user with the same username already exists
         const existingUsername = await User.findOne({ Username });
         if (existingUsername) {
