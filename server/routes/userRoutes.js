@@ -6,7 +6,6 @@ const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
-const uploads = require('../uploads')
 const multer = require('multer');
 
 // Set up Multer storage configuration
