@@ -7,11 +7,12 @@ const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
 const multer = require('multer');
+const path = require('path');
 
 // Set up Multer storage configuration
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads'); // Set the upload directory
+        cb(null, path.join(__dirname, '../uploads')); // Absolute path to the uploads directory
     },
     filename: function (req, file, cb) {
         const ext = file.originalname.split('.').pop(); // Get the file extension
