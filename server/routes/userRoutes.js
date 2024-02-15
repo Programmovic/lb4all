@@ -96,7 +96,7 @@ console.log(req.body, req.file)
         if (!isStrongPassword(Password)) {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
         }
-console.log(`Phot: ${Photo}`)
+console.log(`Phot: ${Photo.filename}`)
         // If no duplicate and password is strong, create a new user
         const newUser = await User.create({
             Username,
