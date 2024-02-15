@@ -9,9 +9,9 @@ const Order = require('../models/Order');
 const cloudinary = require('cloudinary').v2;
 const multer = require('multer');
 
-const storage = new Multer.memoryStorage();
+const storage = new multer.memoryStorage();
 const upload = multer({
-  storage,
+    storage,
 });
 
 // Configure Cloudinary with your cloud name, API key, and API secret
@@ -51,7 +51,7 @@ router.get('/search', async (req, res) => {
 // Signup
 router.post('/signup', upload.single("Photo"), async (req, res) => {
     try {
-        
+
         const {
             Username,
             Password,
@@ -88,7 +88,7 @@ router.post('/signup', upload.single("Photo"), async (req, res) => {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
         }
 
-        
+
         // If no duplicate and password is strong, create a new user
         const newUser = await User.create({
             Username,
