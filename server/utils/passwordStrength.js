@@ -6,7 +6,7 @@ const isStrongPassword = (password) => {
     const hasLowercase = /[a-z]/.test(password);
     const hasDigit = /\d/.test(password);
     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-
+console.log(password)
     return (
         password.length >= minLength &&
         hasUppercase &&
