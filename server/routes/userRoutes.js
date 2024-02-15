@@ -6,12 +6,13 @@ const verifyToken = require('../middleware/auth');
 const isStrongPassword = require('../utils/passwordStrength');
 const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
+const uploads = require('../uploads')
 const multer = require('multer');
 
 // Set up Multer storage configuration
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '../uploads'); // Set the upload directory
+        cb(null, './uploads'); // Set the upload directory
     },
     filename: function (req, file, cb) {
         const ext = file.originalname.split('.').pop(); // Get the file extension
