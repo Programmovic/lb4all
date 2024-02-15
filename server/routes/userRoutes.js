@@ -74,12 +74,12 @@ router.post('/signup', async (req, res) => {
             return res.status(400).json({ message: 'Password does not meet the required strength criteria.' });
         }
 
-        let photoUrl;
-        if (req.body.Photo) {
-            // If there's a photo, upload it to Cloudinary
-            const photoResult = await cloudinary.uploader.upload(req.body.Photo);
-            photoUrl = photoResult.secure_url;
-        }
+        // let photoUrl;
+        // if (req.body.Photo) {
+        //     // If there's a photo, upload it to Cloudinary
+        //     const photoResult = await cloudinary.uploader.upload(req.body.Photo);
+        //     photoUrl = photoResult.secure_url;
+        // }
 
         // If no duplicate and password is strong, create a new user
         const newUser = await User.create({
