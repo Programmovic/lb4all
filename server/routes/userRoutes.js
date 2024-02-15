@@ -97,10 +97,14 @@ router.post('/signup', async (req, res) => {
                 let photoUrl;
                 if (req.file) {
                     // If there's a photo, upload it to Cloudinary
-                    const photoResult = await cloudinary.uploader.upload(req.file.buffer.toString('base64')); // Convert buffer to base64 string
-                    photoUrl = photoResult.secure_url;
+                    try {
+                        const photoResult = await cloudinary.uploader.upload(req.file.buffer.toString('base64')); // Convert buffer to base64 string
+                        photoUrl = photoResult.secure_url;
+                    } catch (uploadError) {
+                        console.log(uploadError);
+                        return res.status(500).json({ error: 'Error uploading photo to Cloudinary' });
+                    }
                 }
-
                 // If no duplicate and password is strong, create a new user
                 const newUser = await User.create({
                     Username,
