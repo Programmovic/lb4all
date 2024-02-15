@@ -18,7 +18,7 @@ const upload = multer({
   limits: {
     fileSize: 5 * 1024 * 1024, // Limit file size to 5MB
   },
-}).single('photo'); // 'photo' should match the name attribute of your file input field
+}).single('Photo'); // 'photo' should match the name attribute of your file input field
 
 // Configure Cloudinary with your cloud name, API key, and API secret
 cloudinary.config({
