@@ -110,7 +110,7 @@ console.log(`Phot: ${Photo}`)
             Photo: Photo ? Photo.filename : null, // Check if Photo exists before accessing filename
             // Add other fields as needed
         });
-
+        console.log(newUser)
         res.status(201).json(newUser);
     } catch (error) {
         console.log(error)
