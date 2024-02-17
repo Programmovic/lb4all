@@ -8,7 +8,7 @@ const WishList = require('../models/Wishlist');
 const Order = require('../models/Order');
 const cloudinary = require('cloudinary').v2;
 const multer = require('multer');
-
+const handleUpload = require('../utils/cloudinaryUpload');
 const storage = new multer.memoryStorage();
 const upload = multer({
     storage,
@@ -20,12 +20,7 @@ cloudinary.config({
     api_key: '353214544668246',
     api_secret: 'YABFAE4AZkoYcGq2VN9cm4j1Lzo'
 });
-async function handleUpload(file) {
-    const res = await cloudinary.uploader.upload(file, {
-        resource_type: "auto",
-    });
-    return res;
-}
+
 router.get('/search', async (req, res) => {
     try {
         const { query } = req.query;
@@ -158,7 +153,7 @@ router.get('/:userID', async (req, res) => {
 });
 
 // Update a user by ID
-router.put('/:userID', async (req, res) => {
+router.put('/:userID', upload.single("Photo"), async (req, res) => {
     try {
         // Check if the new username or email already exists
         const existingUser = await User.findOne({
@@ -174,8 +169,23 @@ router.put('/:userID', async (req, res) => {
             return res.status(409).json({ error: 'Duplicate username or email' });
         }
 
+        let photoUrl; // Declare a variable to store the photo URL
+
+        if (req.file) {
+            // If there's a photo, upload it to Cloudinary
+            const b64 = Buffer.from(req.file.buffer).toString("base64");
+            let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
+            const cldRes = await handleUpload(dataURI);
+            photoUrl = cldRes.secure_url; // Extract the secure URL from the Cloudinary response
+        }
+
+        const updatedUserData = {
+            ...req.body,
+            Photo: photoUrl || null, // Use the photo URL or null if no photo
+        };
+
         // Perform the update if no duplicates are found
-        const updatedUser = await User.findByIdAndUpdate(req.params.userID, req.body, { new: true });
+        const updatedUser = await User.findByIdAndUpdate(req.params.userID, updatedUserData, { new: true });
         res.status(200).json(updatedUser);
     } catch (error) {
         res.status(500).json({ error: error.message });
