@@ -178,7 +178,7 @@ router.put('/:userID', upload.single("Photo"), async (req, res) => {
             const cldRes = await handleUpload(dataURI);
             photoUrl = cldRes.secure_url; // Extract the secure URL from the Cloudinary response
         }
-
+console.log(req.file)
         const updatedUserData = {
             ...req.body,
             Photo: photoUrl || null, // Use the photo URL or null if no photo
