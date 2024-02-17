@@ -186,6 +186,7 @@ router.put('/:userID', upload.single("Photo"), async (req, res) => {
 
         // Perform the update if no duplicates are found
         const updatedUser = await User.findByIdAndUpdate(req.params.userID, updatedUserData, { new: true });
+        console.log(updatedUser)
         res.status(200).json(updatedUser);
     } catch (error) {
         res.status(500).json({ error: error.message });
